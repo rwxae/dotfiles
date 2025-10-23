@@ -62,7 +62,7 @@
         bars = [ ];
         bindkeysToCode = true;
         keybindings = {
-          "${mod}+q" = "kill";
+          "${mod}+control+q" = "kill";
           "${mod}+space" = "exec rofi -show combi";
 
           "XF86AudioLowerVolume" = "exec volumectl -u down";
@@ -73,10 +73,10 @@
           "${mod}+k" = "focus up";
           "${mod}+l" = "focus right";
 
-          "${mod}+Shift+h" = "move left";
-          "${mod}+Shift+j" = "move down";
-          "${mod}+Shift+k" = "move up";
-          "${mod}+Shift+l" = "move right";
+          "${mod}+shift+h" = "move left";
+          "${mod}+shift+j" = "move down";
+          "${mod}+shift+k" = "move up";
+          "${mod}+shift+l" = "move right";
 
           "${mod}+1" = "workspace number 1";
           "${mod}+2" = "workspace number 2";
@@ -96,6 +96,7 @@
           "${mod}+f" = "workspace f";
           "${mod}+g" = "workspace g";
           "${mod}+i" = "workspace i";
+          "${mod}+q" = "workspace q";
           "${mod}+m" = "workspace m";
           "${mod}+n" = "workspace n";
           "${mod}+o" = "workspace o";
@@ -110,37 +111,38 @@
           "${mod}+y" = "workspace y";
           "${mod}+z" = "workspace z";
 
-          "${mod}+Shift+1" = "move container to workspace number 1";
-          "${mod}+Shift+2" = "move container to workspace number 2";
-          "${mod}+Shift+3" = "move container to workspace number 3";
-          "${mod}+Shift+4" = "move container to workspace number 4";
-          "${mod}+Shift+5" = "move container to workspace number 5";
-          "${mod}+Shift+6" = "move container to workspace number 6";
-          "${mod}+Shift+7" = "move container to workspace number 7";
-          "${mod}+Shift+8" = "move container to workspace number 8";
-          "${mod}+Shift+9" = "move container to workspace number 9";
-          "${mod}+Shift+0" = "move container to workspace number 10";
-          "${mod}+Shift+a" = "move container to workspace a";
-          "${mod}+Shift+b" = "move container to workspace b";
-          "${mod}+Shift+c" = "move container to workspace c";
-          "${mod}+Shift+d" = "move container to workspace d";
-          "${mod}+Shift+e" = "move container to workspace e";
-          "${mod}+Shift+f" = "move container to workspace f";
-          "${mod}+Shift+g" = "move container to workspace g";
-          "${mod}+Shift+i" = "move container to workspace i";
-          "${mod}+Shift+m" = "move container to workspace m";
-          "${mod}+Shift+n" = "move container to workspace n";
-          "${mod}+Shift+o" = "move container to workspace o";
-          "${mod}+Shift+p" = "move container to workspace p";
-          "${mod}+Shift+r" = "move container to workspace r";
-          "${mod}+Shift+s" = "move container to workspace s";
-          "${mod}+Shift+t" = "move container to workspace t";
-          "${mod}+Shift+u" = "move container to workspace u";
-          "${mod}+Shift+v" = "move container to workspace v";
-          "${mod}+Shift+w" = "move container to workspace w";
-          "${mod}+Shift+x" = "move container to workspace x";
-          "${mod}+Shift+y" = "move container to workspace y";
-          "${mod}+Shift+z" = "move container to workspace z";
+          "${mod}+shift+1" = "move container to workspace number 1";
+          "${mod}+shift+2" = "move container to workspace number 2";
+          "${mod}+shift+3" = "move container to workspace number 3";
+          "${mod}+shift+4" = "move container to workspace number 4";
+          "${mod}+shift+5" = "move container to workspace number 5";
+          "${mod}+shift+6" = "move container to workspace number 6";
+          "${mod}+shift+7" = "move container to workspace number 7";
+          "${mod}+shift+8" = "move container to workspace number 8";
+          "${mod}+shift+9" = "move container to workspace number 9";
+          "${mod}+shift+0" = "move container to workspace number 10";
+          "${mod}+shift+a" = "move container to workspace a";
+          "${mod}+shift+b" = "move container to workspace b";
+          "${mod}+shift+c" = "move container to workspace c";
+          "${mod}+shift+d" = "move container to workspace d";
+          "${mod}+shift+e" = "move container to workspace e";
+          "${mod}+shift+f" = "move container to workspace f";
+          "${mod}+shift+g" = "move container to workspace g";
+          "${mod}+shift+i" = "move container to workspace i";
+          "${mod}+shift+q" = "move container to workspace q";
+          "${mod}+shift+m" = "move container to workspace m";
+          "${mod}+shift+n" = "move container to workspace n";
+          "${mod}+shift+o" = "move container to workspace o";
+          "${mod}+shift+p" = "move container to workspace p";
+          "${mod}+shift+r" = "move container to workspace r";
+          "${mod}+shift+s" = "move container to workspace s";
+          "${mod}+shift+t" = "move container to workspace t";
+          "${mod}+shift+u" = "move container to workspace u";
+          "${mod}+shift+v" = "move container to workspace v";
+          "${mod}+shift+w" = "move container to workspace w";
+          "${mod}+shift+x" = "move container to workspace x";
+          "${mod}+shift+y" = "move container to workspace y";
+          "${mod}+shift+z" = "move container to workspace z";
 
           "${mod}+Ctrl+h" = "move workspace to output left";
           "${mod}+Ctrl+l" = "move workspace to output right";
@@ -280,8 +282,8 @@
           "e" = [ { app_id = "dev.zed.Zed"; } ];
           "r" = [ { app_id = "thunderbird"; } ];
           "t" = [ { app_id = "org.telegram.desktop"; } ];
-          "a" = [ { class = "^anytype$"; } ];
-          "s" = [ { class = "^Slack$"; } ];
+          "a" = [ { app_id = "anytype"; } ];
+          "s" = [ { app_id = "Slack"; } ];
           "d" = [ { class = "^discord$"; } ];
           "f" = [ { app_id = "zen-beta"; } ];
           "g" = [ { app_id = "kitty"; } ];

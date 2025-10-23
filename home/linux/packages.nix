@@ -5,7 +5,7 @@
     # GUI
     authenticator
     pwvucontrol
-    atlauncher
+    prismlauncher
     vial
     gcolor3
     nemo
