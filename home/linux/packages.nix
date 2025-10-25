@@ -6,6 +6,7 @@
     authenticator
     pwvucontrol
     prismlauncher
+    heroic
     vial
     gcolor3
     nemo
