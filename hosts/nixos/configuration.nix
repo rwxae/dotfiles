@@ -14,11 +14,16 @@
 
   hardware = {
     graphics.enable = true;
+    nvidia = {
+      open = true;
+    };
     bluetooth = {
       enable = true;
       powerOnBoot = true;
     };
   };
+
+  services.xserver.videoDrivers = ["nvidia"];
 
   swapDevices = [
     {

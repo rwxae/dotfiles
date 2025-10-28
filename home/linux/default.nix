@@ -7,6 +7,7 @@
     ./chromium.nix
     ./easyeffects.nix
     ./gtk.nix
+    ./hyprland.nix
     ./mpv.nix
     ./obs.nix
     ./packages.nix
