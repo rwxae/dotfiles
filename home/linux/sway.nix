@@ -1,11 +1,6 @@
-{ pkgs, ... }:
+{ ... }:
 
 {
-  home.packages = with pkgs; [
-    wl-clipboard
-    kooha
-  ];
-
   wayland.windowManager.sway = {
     enable = true;
     wrapperFeatures.gtk = true;
