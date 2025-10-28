@@ -1,4 +1,3 @@
-# This module has been replaced in favor of wayland.nix. Use it for reference.
 { ... }:
 
 {

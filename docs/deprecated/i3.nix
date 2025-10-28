@@ -1,33 +1,23 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
-  wayland.windowManager.sway = {
-    enable = true;
-    wrapperFeatures.gtk = true;
-    config =
-      let
-        mod = "Mod4";
-        mainDesktop = "DP-1";
-        secondDesktop = "HDMI-A-2";
-      in
-      {
+  home.packages = with pkgs; [
+    xclip
+    xcolor
+    ffcast
+    slop
+  ];
+
+  xsession.windowManager.i3 =
+    let
+      mod = "Mod4";
+      mainDesktop = "DP-0";
+      secondDesktop = "HDMI-1";
+    in
+    {
+      enable = true;
+      config = {
         modifier = mod;
-        input = {
-          "*" = {
-            xkb_layout = "us,ru";
-            xkb_options = "grp:caps_toggle";
-            repeat_delay = "225";
-            repeat_rate = "30";
-          };
-        };
-        output = {
-          "${mainDesktop}" = {
-            pos = "0 0";
-          };
-          "${secondDesktop}" = {
-            pos = "1920 0";
-          };
-        };
         window = {
           hideEdgeBorders = "both";
           titlebar = false;
@@ -38,40 +28,37 @@
           border = 0;
           criteria = [
             {
-              title = "AmneziaVPN";
+              class = "^AmneziaVPN$";
             }
             {
-              app_id = "com.saivert.pwvucontrol";
-            }
-            {
-              app_id = "gcolor3";
-            }
-            {
-              app_id = "nemo";
-            }
-            {
-              app_id = "com.belmoussaoui.Authenticator";
+              class = "^pwvucontrol$";
             }
           ];
         };
-        bars = [ ];
-        bindkeysToCode = true;
+        bars = [
+          {
+            mode = "invisible";
+          }
+        ];
         keybindings = {
-          "${mod}+control+q" = "kill";
-          "${mod}+space" = "exec rofi -show combi";
+          "${mod}+q" = "kill";
+          "${mod}+space" = "exec --no-startup-id rofi -show combi";
 
-          "XF86AudioLowerVolume" = "exec volumectl -u down";
-          "XF86AudioRaiseVolume" = "exec volumectl -u up";
+          "XF86AudioPrev" = "exec --no-startup-id playerctl previous";
+          "XF86AudioLowerVolume" = "exec --no-startup-id wpctl set-volume @DEFAULT_SINK@ .05-";
+          "XF86AudioRaiseVolume" = "exec --no-startup-id wpctl set-volume @DEFAULT_SINK@ .05+";
+          "XF86AudioNext" = "exec --no-startup-id playerctl next";
+          "XF86AudioPlay" = "exec --no-startup-id playerctl play-pause";
 
           "${mod}+h" = "focus left";
           "${mod}+j" = "focus down";
           "${mod}+k" = "focus up";
           "${mod}+l" = "focus right";
 
-          "${mod}+shift+h" = "move left";
-          "${mod}+shift+j" = "move down";
-          "${mod}+shift+k" = "move up";
-          "${mod}+shift+l" = "move right";
+          "${mod}+Shift+h" = "move left";
+          "${mod}+Shift+j" = "move down";
+          "${mod}+Shift+k" = "move up";
+          "${mod}+Shift+l" = "move right";
 
           "${mod}+1" = "workspace number 1";
           "${mod}+2" = "workspace number 2";
@@ -91,7 +78,6 @@
           "${mod}+f" = "workspace f";
           "${mod}+g" = "workspace g";
           "${mod}+i" = "workspace i";
-          "${mod}+q" = "workspace q";
           "${mod}+m" = "workspace m";
           "${mod}+n" = "workspace n";
           "${mod}+o" = "workspace o";
@@ -106,41 +92,39 @@
           "${mod}+y" = "workspace y";
           "${mod}+z" = "workspace z";
 
-          "${mod}+shift+1" = "move container to workspace number 1";
-          "${mod}+shift+2" = "move container to workspace number 2";
-          "${mod}+shift+3" = "move container to workspace number 3";
-          "${mod}+shift+4" = "move container to workspace number 4";
-          "${mod}+shift+5" = "move container to workspace number 5";
-          "${mod}+shift+6" = "move container to workspace number 6";
-          "${mod}+shift+7" = "move container to workspace number 7";
-          "${mod}+shift+8" = "move container to workspace number 8";
-          "${mod}+shift+9" = "move container to workspace number 9";
-          "${mod}+shift+0" = "move container to workspace number 10";
-          "${mod}+shift+a" = "move container to workspace a";
-          "${mod}+shift+b" = "move container to workspace b";
-          "${mod}+shift+c" = "move container to workspace c";
-          "${mod}+shift+d" = "move container to workspace d";
-          "${mod}+shift+e" = "move container to workspace e";
-          "${mod}+shift+f" = "move container to workspace f";
-          "${mod}+shift+g" = "move container to workspace g";
-          "${mod}+shift+i" = "move container to workspace i";
-          "${mod}+shift+q" = "move container to workspace q";
-          "${mod}+shift+m" = "move container to workspace m";
-          "${mod}+shift+n" = "move container to workspace n";
-          "${mod}+shift+o" = "move container to workspace o";
-          "${mod}+shift+p" = "move container to workspace p";
-          "${mod}+shift+r" = "move container to workspace r";
-          "${mod}+shift+s" = "move container to workspace s";
-          "${mod}+shift+t" = "move container to workspace t";
-          "${mod}+shift+u" = "move container to workspace u";
-          "${mod}+shift+v" = "move container to workspace v";
-          "${mod}+shift+w" = "move container to workspace w";
-          "${mod}+shift+x" = "move container to workspace x";
-          "${mod}+shift+y" = "move container to workspace y";
-          "${mod}+shift+z" = "move container to workspace z";
+          "${mod}+Shift+1" = "move container to workspace number 1";
+          "${mod}+Shift+2" = "move container to workspace number 2";
+          "${mod}+Shift+3" = "move container to workspace number 3";
+          "${mod}+Shift+4" = "move container to workspace number 4";
+          "${mod}+Shift+5" = "move container to workspace number 5";
+          "${mod}+Shift+6" = "move container to workspace number 6";
+          "${mod}+Shift+7" = "move container to workspace number 7";
+          "${mod}+Shift+8" = "move container to workspace number 8";
+          "${mod}+Shift+9" = "move container to workspace number 9";
+          "${mod}+Shift+0" = "move container to workspace number 10";
+          "${mod}+Shift+a" = "move container to workspace a";
+          "${mod}+Shift+b" = "move container to workspace b";
+          "${mod}+Shift+c" = "move container to workspace c";
+          "${mod}+Shift+d" = "move container to workspace d";
+          "${mod}+Shift+e" = "move container to workspace e";
+          "${mod}+Shift+f" = "move container to workspace f";
+          "${mod}+Shift+g" = "move container to workspace g";
+          "${mod}+Shift+i" = "move container to workspace i";
+          "${mod}+Shift+m" = "move container to workspace m";
+          "${mod}+Shift+n" = "move container to workspace n";
+          "${mod}+Shift+o" = "move container to workspace o";
+          "${mod}+Shift+p" = "move container to workspace p";
+          "${mod}+Shift+r" = "move container to workspace r";
+          "${mod}+Shift+s" = "move container to workspace s";
+          "${mod}+Shift+t" = "move container to workspace t";
+          "${mod}+Shift+u" = "move container to workspace u";
+          "${mod}+Shift+v" = "move container to workspace v";
+          "${mod}+Shift+w" = "move container to workspace w";
+          "${mod}+Shift+x" = "move container to workspace x";
+          "${mod}+Shift+y" = "move container to workspace y";
+          "${mod}+Shift+z" = "move container to workspace z";
 
-          "${mod}+Ctrl+h" = "move workspace to output left";
-          "${mod}+Ctrl+l" = "move workspace to output right";
+          "${mod}+Shift+Tab" = "move workspace to output next";
         };
         workspaceOutputAssign = [
           {
@@ -274,66 +258,55 @@
         ];
         assigns = {
           "number 10" = [ { class = "^Chromium-browser$"; } ];
-          "e" = [ { app_id = "dev.zed.Zed"; } ];
-          "r" = [ { app_id = "thunderbird"; } ];
-          "t" = [ { app_id = "org.telegram.desktop"; } ];
-          "a" = [ { app_id = "anytype"; } ];
-          "s" = [ { app_id = "Slack"; } ];
+          "e" = [ { class = "^dev.zed.Zed$"; } ];
+          "r" = [ { class = "^thunderbird$"; } ];
+          "t" = [ { class = "^AyuGramDesktop$"; } ];
+          "s" = [ { class = "^Slack$"; } ];
+          "a" = [ { class = "^anytype$"; } ];
           "d" = [ { class = "^discord$"; } ];
-          "f" = [ { app_id = "zen-beta"; } ];
-          "g" = [ { app_id = "kitty"; } ];
-          "c" = [ { app_id = "chromium-browser"; } ];
-          "b" = [ { app_id = "org.pwmt.zathura"; } ];
+          "f" = [ { class = "^zen$"; } ];
+          "g" = [ { class = "^kitty$"; } ];
+          "c" = [ { class = "^Google-chrome$"; } ];
+          "b" = [ { class = "^Zathura$"; } ];
         };
         startup = [
           {
             command = "AmneziaVPN";
+            notification = false;
           }
           {
             command = "zeditor";
+            notification = false;
           }
           {
             command = "thunderbird";
+            notification = false;
           }
           {
-            command = "Telegram";
+            command = "AyuGram";
+            notification = false;
           }
           {
             command = "anytype";
+            notification = false;
           }
           {
             command = "slack";
+            notification = false;
           }
           {
             command = "discord";
+            notification = false;
           }
           {
             command = "zen-beta";
+            notification = false;
           }
           {
             command = "kitty";
-          }
-          {
-            command = "chromium";
+            notification = false;
           }
         ];
       };
-  };
-
-  programs.swaylock.enable = true;
-
-  services = {
-    cliphist.enable = true;
-    flameshot = {
-      enable = true;
-      settings = {
-        General = {
-          disabledTrayIcon = true;
-          showStartupLaunchMessage = false;
-          useGrimAdapter = true;
-          disabledGrimWarning = true;
-        };
-      };
     };
-  };
 }

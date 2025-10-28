@@ -1,14 +1,13 @@
-{ pkgs, ... }:
+{ lib, pkgs, ... }:
 
 {
   services.greetd = {
     enable = true;
     settings = {
       default_session = {
-        command = "${pkgs.tuigreet}/bin/tuigreet --time --cmd hyprland";
+        command = "${lib.getExe pkgs.tuigreet} --cmd hyprland";
         user = "greeter";
       };
     };
   };
-  security.pam.services.swaylock = { };
 }
