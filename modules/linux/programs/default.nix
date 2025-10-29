@@ -1,6 +1,10 @@
 { ... }:
 
 {
+  imports = [
+    ./hyprland.nix
+  ];
+
   programs = {
     adb.enable = true;
     amnezia-vpn.enable = true;

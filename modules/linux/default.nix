@@ -4,7 +4,7 @@
   imports = [
     ../shared
     ./environment.nix
-    ./programs.nix
+    ./programs
     ./services
   ];
 
