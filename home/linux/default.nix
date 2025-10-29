@@ -13,6 +13,7 @@
     ./mpv.nix
     ./obs.nix
     ./packages.nix
+    ./pointer.nix
     ./rofi.nix
     ./swaylock.nix
     ./swaync.nix
