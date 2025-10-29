@@ -8,6 +8,7 @@
     ssh.startAgent = true;
     bash.blesh.enable = true;
     steam.enable = true;
+    steam.gamescopeSession.enable = true;
     gamemode.enable = true;
     hyprland.enable = true;
   };
