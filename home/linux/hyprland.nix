@@ -3,6 +3,7 @@
 {
   wayland.windowManager.hyprland = {
     enable = true;
+    systemd.enable = false;
     package = null;
     portalPackage = null;
     settings =
@@ -12,6 +13,7 @@
         secondDesktop = "HDMI-A-2";
         numbers = lib.stringToCharacters "123456789";
         letters = lib.stringToCharacters "abcdefgimnopqrstuvwxyz";
+        launchApp = app: "uwsm app -- ${app}";
       in
       {
         input = {
@@ -63,7 +65,7 @@
         ];
 
         bind = lib.flatten [
-          "${mod}, space, exec, vicinae toggle"
+          "${mod}, space, exec, ${launchApp "vicinae toggle"}"
 
           ", xf86audiolowervolume, exec, volumectl -u down"
           ", xf86audioraisevolume, exec, volumectl -u up"
@@ -100,16 +102,14 @@
         ];
 
         exec-once = [
-          "AmneziaVPN"
-          "zeditor"
-          "thunderbird"
-          "Telegram"
-          "anytype"
-          "slack"
-          "discord"
-          "zen-beta"
-          "kitty"
-          "chromium"
+          (launchApp "zeditor")
+          (launchApp "thunderbird")
+          (launchApp "Telegram")
+          (launchApp "anytype")
+          (launchApp "slack")
+          (launchApp "discord")
+          (launchApp "zen-beta")
+          (launchApp "kitty")
         ];
       };
   };

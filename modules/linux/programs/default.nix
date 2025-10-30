@@ -3,6 +3,7 @@
 {
   imports = [
     ./hyprland.nix
+    ./uwsm.nix
   ];
 
   programs = {
@@ -14,6 +15,5 @@
     steam.enable = true;
     steam.gamescopeSession.enable = true;
     gamemode.enable = true;
-    hyprland.enable = true;
   };
 }
