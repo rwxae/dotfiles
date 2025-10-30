@@ -3,7 +3,6 @@
 {
   imports = [
     ../shared
-    ./avizo.nix
     ./chromium.nix
     ./cliphist.nix
     ./easyeffects.nix
@@ -14,9 +13,6 @@
     ./obs.nix
     ./packages.nix
     ./pointer.nix
-    ./rofi.nix
-    ./swaylock.nix
-    ./swaync.nix
     ./vicinae.nix
     ./zathura.nix
   ];
