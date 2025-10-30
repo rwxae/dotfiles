@@ -17,6 +17,7 @@
     ./rofi.nix
     ./swaylock.nix
     ./swaync.nix
+    ./vicinae.nix
     ./zathura.nix
   ];
 }

@@ -30,10 +30,14 @@
 
         decoration = {
           rounding = 0;
-          blur.enabled = false;
         };
 
         animations.enabled = false;
+
+        layerrule = [
+          "blur, vicinae"
+          "ignorealpha 0, vicinae"
+        ];
 
         windowrulev2 = [
           "float, class:^(com.saivert.pwvucontrol)$"
@@ -59,7 +63,7 @@
         ];
 
         bind = lib.flatten [
-          "${mod}, space, exec, rofi -show combi"
+          "${mod}, space, exec, vicinae toggle"
 
           ", xf86audiolowervolume, exec, volumectl -u down"
           ", xf86audioraisevolume, exec, volumectl -u up"

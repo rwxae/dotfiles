@@ -120,29 +120,26 @@
         terminal = {
           button = false;
         };
-        languages = {
-          JavaScript = {
-            code_actions_on_format = {
-              "source.fixAll.eslint" = true;
+        languages =
+          let
+            jsLike = {
+              formatter = [ ];
+              code_actions_on_format = {
+                "source.fixAll.eslint" = true;
+              };
+            };
+          in
+          {
+            JavaScript = jsLike;
+            TypeScript = jsLike;
+            TSX = jsLike;
+            Nix = {
+              language_servers = [
+                "nil"
+                "!nixd"
+              ];
             };
           };
-          TypeScript = {
-            code_actions_on_format = {
-              "source.fixAll.eslint" = true;
-            };
-          };
-          TSX = {
-            code_actions_on_format = {
-              "source.fixAll.eslint" = true;
-            };
-          };
-          Nix = {
-            language_servers = [
-              "nil"
-              "!nixd"
-            ];
-          };
-        };
         lsp = {
           nil = {
             settings = {
