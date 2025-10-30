@@ -8,11 +8,11 @@
     prismlauncher
     heroic
     vial
-    gcolor3
     nemo
     kooha
     krita
     yandex-music
+    hyprpicker
 
     # CLI
     tesseract

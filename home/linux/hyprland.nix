@@ -37,7 +37,6 @@
 
         windowrulev2 = [
           "float, class:^(com.saivert.pwvucontrol)$"
-          "float, class:^(gcolor3)$"
           "float, class:^(nemo)$"
           "workspace 10 silent, class:^(Chromium-browser)$"
           "workspace name:e silent, class:^(dev.zed.Zed)$"
