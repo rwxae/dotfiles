@@ -1,4 +1,4 @@
-{ lib, ... }:
+{ lib, pkgs, ... }:
 
 {
   wayland.windowManager.hyprland = {
@@ -6,6 +6,9 @@
     systemd.enable = false;
     package = null;
     portalPackage = null;
+    plugins = with pkgs.hyprlandPlugins; [
+      hypr-dynamic-cursors
+    ];
     settings =
       let
         mod = "SUPER";
