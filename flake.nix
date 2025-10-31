@@ -41,9 +41,10 @@
         nixos = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs; };
           modules = [
+            nur.modules.nixos.default
+            home-manager.nixosModules.home-manager
             stylix.nixosModules.stylix
             solaar.nixosModules.default
-            home-manager.nixosModules.home-manager
             ./hosts/nixos/configuration.nix
           ];
         };
@@ -53,9 +54,9 @@
         mac = nix-darwin.lib.darwinSystem {
           specialArgs = { inherit inputs; };
           modules = [
-            stylix.darwinModules.stylix
             nur.modules.darwin.default
             home-manager.darwinModules.home-manager
+            stylix.darwinModules.stylix
             ./hosts/mac/configuration.nix
           ];
         };

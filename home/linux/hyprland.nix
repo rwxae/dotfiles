@@ -116,4 +116,6 @@
         ];
       };
   };
+  # TODO: https://github.com/nix-community/stylix/issues/478
+  home.pointerCursor.hyprcursor.enable = true;
 }
