@@ -13,6 +13,7 @@
     ./obs.nix
     ./packages.nix
     ./pointer.nix
+    ./swww.nix
     ./vicinae.nix
     ./zathura.nix
   ];
