@@ -11,7 +11,6 @@
     stylix.inputs.nixpkgs.follows = "nixpkgs";
     nix-darwin.url = "github:LnL7/nix-darwin/master";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
-    # TODO: https://github.com/NixOS/nixpkgs/issues/327982
     quickshell.url = "github:outfoxxed/quickshell";
     quickshell.inputs.nixpkgs.follows = "nixpkgs";
     noctalia.url = "github:noctalia-dev/noctalia-shell";
