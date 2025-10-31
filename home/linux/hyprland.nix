@@ -70,8 +70,8 @@
         bind = lib.flatten [
           "${mod}, space, exec, ${launchApp "vicinae toggle"}"
 
-          ", xf86audiolowervolume, exec, volumectl -u down"
-          ", xf86audioraisevolume, exec, volumectl -u up"
+          ", xf86audiolowervolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
+          ", xf86audioraisevolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+"
           ", xf86audioplay, exec, playerctl play-pause"
           ", xf86audioprev, exec, playerctl previous"
           ", xf86audionext, exec, playerctl next"

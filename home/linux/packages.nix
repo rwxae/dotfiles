@@ -9,7 +9,6 @@
     heroic
     vial
     nemo
-    kooha
     krita
     yandex-music
     hyprpicker
