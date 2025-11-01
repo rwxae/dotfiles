@@ -3,6 +3,7 @@
 {
   imports = [
     ./hyprland.nix
+    ./steam.nix
     ./uwsm.nix
   ];
 
@@ -12,8 +13,6 @@
     nix-ld.enable = true;
     ssh.startAgent = true;
     bash.blesh.enable = true;
-    steam.enable = true;
-    steam.gamescopeSession.enable = true;
     gamemode.enable = true;
   };
 }
