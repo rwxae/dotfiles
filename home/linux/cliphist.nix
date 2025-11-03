@@ -1,7 +1,7 @@
 { ... }:
 
 {
-  services.avizo = {
+  services.cliphist = {
     enable = true;
   };
 }

@@ -109,9 +109,6 @@
           inherit dock default_width;
           button = false;
         };
-        chat_panel = {
-          inherit default_width;
-        };
         outline_panel = {
           inherit dock default_width;
           button = false;
@@ -123,35 +120,26 @@
         terminal = {
           button = false;
         };
-        languages = {
-          JavaScript = {
-            formatter = {
-              code_actions = {
+        languages =
+          let
+            jsLike = {
+              formatter = [ ];
+              code_actions_on_format = {
                 "source.fixAll.eslint" = true;
               };
             };
-          };
-          TypeScript = {
-            formatter = {
-              code_actions = {
-                "source.fixAll.eslint" = true;
-              };
+          in
+          {
+            JavaScript = jsLike;
+            TypeScript = jsLike;
+            TSX = jsLike;
+            Nix = {
+              language_servers = [
+                "nil"
+                "!nixd"
+              ];
             };
           };
-          TSX = {
-            formatter = {
-              code_actions = {
-                "source.fixAll.eslint" = true;
-              };
-            };
-          };
-          Nix = {
-            language_servers = [
-              "nil"
-              "!nixd"
-            ];
-          };
-        };
         lsp = {
           nil = {
             settings = {

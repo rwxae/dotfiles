@@ -1,4 +1,3 @@
-# This module has been replaced in favor of sway.nix. Use it for reference.
 { pkgs, ... }:
 
 {

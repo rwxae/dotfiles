@@ -1,11 +1,6 @@
-{ pkgs, ... }:
+{ ... }:
 
 {
-  home.packages = with pkgs; [
-    wl-clipboard
-    kooha
-  ];
-
   wayland.windowManager.sway = {
     enable = true;
     wrapperFeatures.gtk = true;
@@ -323,22 +318,5 @@
           }
         ];
       };
-  };
-
-  programs.swaylock.enable = true;
-
-  services = {
-    cliphist.enable = true;
-    flameshot = {
-      enable = true;
-      settings = {
-        General = {
-          disabledTrayIcon = true;
-          showStartupLaunchMessage = false;
-          useGrimAdapter = true;
-          disabledGrimWarning = true;
-        };
-      };
-    };
   };
 }

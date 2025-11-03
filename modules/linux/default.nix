@@ -1,10 +1,10 @@
-{ pkgs, ... }:
+{ ... }:
 
 {
   imports = [
     ../shared
     ./environment.nix
-    ./programs.nix
+    ./programs
     ./services
   ];
 
@@ -36,19 +36,6 @@
   networking = {
     hostName = "nixos";
     networkmanager.enable = true;
-  };
-
-  xdg.portal = {
-    enable = true;
-    config.sway = {
-      default = [ "gtk" ];
-      "org.freedesktop.impl.portal.Screenshot" = "wlr";
-      "org.freedesktop.impl.portal.ScreenCast" = "wlr";
-    };
-    extraPortals = with pkgs; [
-      xdg-desktop-portal-gtk
-      xdg-desktop-portal-wlr
-    ];
   };
 
   security.polkit.enable = true;

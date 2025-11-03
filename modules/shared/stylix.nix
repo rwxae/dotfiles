@@ -9,7 +9,6 @@
     # - tomorrow-night
     # - ashes
     base16Scheme = "${pkgs.base16-schemes}/share/themes/github-dark.yaml";
-    image = ./assets/black.png;
     fonts = with pkgs; {
       serif = {
         package = eb-garamond;
@@ -20,19 +19,18 @@
         name = "Inter";
       };
       monospace = {
-        package = nerd-fonts.jetbrains-mono;
-        name = "JetBrainsMono Nerd Font";
+        package = pkgs.lilex;
+        name = "Lilex";
       };
       emoji = {
-        package = nerd-fonts.jetbrains-mono;
-        name = "JetBrainsMono Nerd Font";
+        package = pkgs.lilex;
+        name = "Lilex";
       };
     };
+    cursor = {
+      package = pkgs.nur.repos.adam0.bibata-modern-cursors-classic-hyprcursor;
+      name = "Bibata-Modern-Classic-hyprcursor";
+      size = 24;
+    };
   };
-
-  # TODO:
-  # specialisation.light.configuration.stylix = {
-  #   image = lib.mkForce ./assets/white.png;
-  #   base16Scheme = lib.mkForce "${pkgs.base16-schemes}/share/themes/cupertino.yaml";
-  # };
 }

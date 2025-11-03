@@ -1,15 +1,13 @@
-{ pkgs, ... }:
+{ ... }:
 
 {
   imports = [
     ./gnome.nix
+    ./greetd.nix
+    ./noctalia.nix
     ./openssh.nix
     ./pipewire.nix
-    ./wayland.nix
+    ./solaar.nix
+    ./udev.nix
   ];
-
-  services = {
-    solaar.enable = true;
-    udev.packages = with pkgs; [ vial ];
-  };
 }

@@ -1,0 +1,7 @@
+{ ... }:
+
+{
+  services.solaar = {
+    enable = true;
+  };
+}

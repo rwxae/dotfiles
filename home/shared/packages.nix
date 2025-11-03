@@ -24,6 +24,7 @@
     nvd
     termusic
     glab
+    git-open
 
     # Archiving and compression
     zip
