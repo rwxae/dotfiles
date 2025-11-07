@@ -1,11 +1,8 @@
-{ inputs, ... }:
+{ ... }:
 
 {
-  imports = [
-    inputs.vicinae.homeManagerModules.default
-  ];
-
-  services.vicinae = {
+  programs.vicinae = {
     enable = true;
+    systemd.enable = true;
   };
 }
