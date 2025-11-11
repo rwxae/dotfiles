@@ -6,6 +6,7 @@
     ./bash.nix
     ./bat.nix
     ./btop.nix
+    ./direnv.nix
     ./eza.nix
     ./fastfetch.nix
     ./fd.nix
