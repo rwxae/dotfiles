@@ -13,10 +13,10 @@
     ./git.nix
     ./gitui.nix
     ./gpg.nix
+    ./helix.nix
     ./kitty.nix
     ./lazydocker.nix
     ./nix-search-tv.nix
-    ./nvf.nix
     ./oh-my-posh.nix
     ./packages.nix
     ./ripgrep.nix

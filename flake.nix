@@ -18,8 +18,6 @@
     noctalia.inputs.quickshell.follows = "quickshell";
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
     zen-browser.inputs.nixpkgs.follows = "nixpkgs";
-    nvf.url = "github:notashelf/nvf";
-    nvf.inputs.nixpkgs.follows = "nixpkgs";
     solaar.url = "github:Svenum/Solaar-Flake/main";
     solaar.inputs.nixpkgs.follows = "nixpkgs";
   };
