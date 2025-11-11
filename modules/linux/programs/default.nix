@@ -4,7 +4,6 @@
   imports = [
     ./hyprland.nix
     ./steam.nix
-    ./uwsm.nix
   ];
 
   programs = {
