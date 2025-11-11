@@ -29,7 +29,6 @@
       nur,
       stylix,
       nix-darwin,
-      solaar,
       ...
     }:
     {
@@ -40,7 +39,6 @@
             nur.modules.nixos.default
             home-manager.nixosModules.home-manager
             stylix.nixosModules.stylix
-            solaar.nixosModules.default
             ./hosts/nixos/configuration.nix
           ];
         };
