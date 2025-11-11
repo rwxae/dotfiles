@@ -140,6 +140,9 @@
                 "!nixd"
               ];
             };
+            Markdown = {
+              format_on_save = "on";
+            };
           };
         lsp = {
           nil = {
