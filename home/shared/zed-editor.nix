@@ -3,6 +3,7 @@
 {
   programs.zed-editor = {
     enable = true;
+    installRemoteServer = true;
     userKeymaps = [
       {
         context = "vim_operator == a || vim_operator == i || vim_operator == cs";
@@ -138,6 +139,9 @@
                 "nil"
                 "!nixd"
               ];
+            };
+            Markdown = {
+              format_on_save = "on";
             };
           };
         lsp = {

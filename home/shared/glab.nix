@@ -1,7 +1,7 @@
 { ... }:
 
 {
-  services.cliphist = {
+  programs.glab = {
     enable = true;
   };
 }

@@ -3,7 +3,6 @@
 {
   imports = [
     ../shared
-    ./environment.nix
     ./programs
     ./services
   ];

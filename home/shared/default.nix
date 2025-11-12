@@ -6,17 +6,20 @@
     ./bash.nix
     ./bat.nix
     ./btop.nix
+    ./direnv.nix
     ./eza.nix
     ./fastfetch.nix
     ./fd.nix
     ./fzf.nix
+    ./gh.nix
     ./git.nix
     ./gitui.nix
+    ./glab.nix
     ./gpg.nix
+    ./helix.nix
     ./kitty.nix
     ./lazydocker.nix
     ./nix-search-tv.nix
-    ./nvf.nix
     ./oh-my-posh.nix
     ./packages.nix
     ./ripgrep.nix

@@ -4,7 +4,6 @@
   imports = [
     ../shared
     ./chromium.nix
-    ./cliphist.nix
     ./easyeffects.nix
     ./flameshot.nix
     ./gtk.nix

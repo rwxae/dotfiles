@@ -18,11 +18,8 @@
     noctalia.inputs.quickshell.follows = "quickshell";
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
     zen-browser.inputs.nixpkgs.follows = "nixpkgs";
-    nvf.url = "github:notashelf/nvf";
-    nvf.inputs.nixpkgs.follows = "nixpkgs";
     solaar.url = "github:Svenum/Solaar-Flake/main";
     solaar.inputs.nixpkgs.follows = "nixpkgs";
-    vicinae.url = "github:vicinaehq/vicinae";
   };
 
   outputs =
@@ -32,7 +29,6 @@
       nur,
       stylix,
       nix-darwin,
-      solaar,
       ...
     }:
     {
@@ -43,7 +39,6 @@
             nur.modules.nixos.default
             home-manager.nixosModules.home-manager
             stylix.nixosModules.stylix
-            solaar.nixosModules.default
             ./hosts/nixos/configuration.nix
           ];
         };
