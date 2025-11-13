@@ -19,12 +19,12 @@
         name = "Inter";
       };
       monospace = {
-        package = pkgs.lilex;
-        name = "Lilex";
+        package = nerd-fonts.jetbrains-mono;
+        name = "JetBrainsMono Nerd Font";
       };
       emoji = {
-        package = pkgs.lilex;
-        name = "Lilex";
+        package = nerd-fonts.jetbrains-mono;
+        name = "JetBrainsMono Nerd Font";
       };
     };
     cursor = {
