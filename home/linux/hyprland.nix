@@ -47,7 +47,6 @@
         windowrulev2 = [
           "float, class:^(com.saivert.pwvucontrol)$"
           "float, class:^(nemo)$"
-          "workspace 10 silent, class:^(Chromium-browser)$"
           "workspace name:e silent, class:^(dev.zed.Zed)$"
           "workspace name:r silent, class:^(thunderbird)$"
           "workspace name:t silent, class:^(org.telegram.desktop)$"
@@ -61,7 +60,6 @@
         ];
 
         workspace = lib.flatten [
-          "10, monitor:${secondDesktop}"
           (numbers |> map (w: "${w}, monitor:${mainDesktop}"))
           "name:f, monitor:${secondDesktop}"
           (letters |> builtins.filter (w: w != "f") |> map (w: "name:${w}, monitor:${mainDesktop}"))
@@ -90,11 +88,9 @@
           "${mod}+control, l, movecurrentworkspacetomonitor, r"
           "${mod}+control, q, killactive"
 
-          "${mod}, 0, workspace, 10"
           (numbers |> map (w: "${mod}, ${w}, workspace, ${w}"))
           (letters |> map (w: "${mod}, ${w}, workspace, name:${w}"))
 
-          "${mod}+shift, 0, movetoworkspace, 10"
           (numbers |> map (w: "${mod}+shift, ${w}, movetoworkspace, ${w}"))
           (letters |> map (w: "${mod}+shift, ${w}, movetoworkspace, name:${w}"))
         ];
