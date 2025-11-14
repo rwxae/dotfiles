@@ -1,7 +1,7 @@
 { ... }:
 
 {
-  services.swww = {
+  programs.mpvpaper = {
     enable = true;
   };
 }

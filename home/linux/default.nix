@@ -9,9 +9,9 @@
     ./gtk.nix
     ./hyprland.nix
     ./mpv.nix
+    ./mpvpaper.nix
     ./obs.nix
     ./packages.nix
-    ./swww.nix
     ./vicinae.nix
     ./zathura.nix
   ];
