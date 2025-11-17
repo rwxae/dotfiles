@@ -14,7 +14,6 @@
     ./gh.nix
     ./git.nix
     ./gitui.nix
-    ./glab.nix
     ./gpg.nix
     ./helix.nix
     ./kitty.nix
