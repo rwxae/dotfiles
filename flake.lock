@@ -271,6 +271,24 @@
         "type": "github"
       }
     },
+    "ndg": {
+      "inputs": {
+        "nixpkgs": "nixpkgs_2"
+      },
+      "locked": {
+        "lastModified": 1763592558,
+        "narHash": "sha256-jsNEkgmZucVxAfYKcwcKterJKcP3zG/Arz2uvxSLTWY=",
+        "owner": "feel-co",
+        "repo": "ndg",
+        "rev": "2b25d120972aa1a551c69fd4a78a645bc68ac3bc",
+        "type": "github"
+      },
+      "original": {
+        "owner": "feel-co",
+        "repo": "ndg",
+        "type": "github"
+      }
+    },
     "nix-darwin": {
       "inputs": {
         "nixpkgs": [
@@ -299,6 +317,22 @@
         "owner": "NixOS",
         "repo": "nixpkgs",
         "rev": "50a96edd8d0db6cc8db57dab6bb6d6ee1f3dc49a",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs_2": {
+      "locked": {
+        "lastModified": 1759733170,
+        "narHash": "sha256-TXnlsVb5Z8HXZ6mZoeOAIwxmvGHp1g4Dw89eLvIwKVI=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "8913c168d1c56dc49a7718685968f38752171c3b",
         "type": "github"
       },
       "original": {
@@ -408,6 +442,7 @@
         "quickshell": "quickshell",
         "solaar": "solaar",
         "stylix": "stylix",
+        "unf": "unf",
         "zen-browser": "zen-browser"
       }
     },
@@ -616,6 +651,27 @@
         "owner": "tinted-theming",
         "repo": "base16-zed",
         "type": "github"
+      }
+    },
+    "unf": {
+      "inputs": {
+        "ndg": "ndg",
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1760178630,
+        "narHash": "sha256-oxRMTQtzIO1yFRhY++Ss8+ea1cTH40bD/+FAE+m5NFk=",
+        "ref": "refs/heads/main",
+        "rev": "8a6aa536039f1b207888b1369c5cabf0b131e07b",
+        "revCount": 5,
+        "type": "git",
+        "url": "https://git.atagen.co/atagen/unf"
+      },
+      "original": {
+        "type": "git",
+        "url": "https://git.atagen.co/atagen/unf"
       }
     },
     "zen-browser": {
