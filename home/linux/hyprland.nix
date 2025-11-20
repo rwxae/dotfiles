@@ -12,8 +12,8 @@
     settings =
       let
         mod = "SUPER";
-        mainDesktop = "DP-1";
-        secondDesktop = "HDMI-A-2";
+        mainMonitor = "DP-1";
+        secondMonitor = "HDMI-A-2";
         numbers = lib.stringToCharacters "123456789";
         letters = lib.stringToCharacters "abcdefgimnopqrstuvwxyz";
         launchApp = app: "uwsm app -- ${app}";
@@ -25,6 +25,11 @@
           repeat_delay = 200;
           repeat_rate = 35;
         };
+
+        monitor = [
+          "${mainMonitor}, 1920x1080@144, 1920x0, 1"
+          "${secondMonitor}, 1920x1080@60, 0x0, 1"
+        ];
 
         general = {
           gaps_in = 0;
@@ -60,9 +65,9 @@
         ];
 
         workspace = lib.flatten [
-          (numbers |> map (w: "${w}, monitor:${mainDesktop}"))
-          "name:f, monitor:${secondDesktop}"
-          (letters |> builtins.filter (w: w != "f") |> map (w: "name:${w}, monitor:${mainDesktop}"))
+          (numbers |> map (w: "${w}, monitor:${mainMonitor}"))
+          "name:f, monitor:${secondMonitor}"
+          (letters |> builtins.filter (w: w != "f") |> map (w: "name:${w}, monitor:${mainMonitor}"))
         ];
 
         bind = lib.flatten [
