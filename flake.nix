@@ -40,7 +40,6 @@
           modules = [
             nur.modules.nixos.default
             home-manager.nixosModules.home-manager
-            stylix.nixosModules.stylix
             ./hosts/nixos/configuration.nix
           ];
         };
@@ -52,7 +51,6 @@
           modules = [
             nur.modules.darwin.default
             home-manager.darwinModules.home-manager
-            stylix.darwinModules.stylix
             ./hosts/mac/configuration.nix
           ];
         };

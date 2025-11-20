@@ -23,6 +23,7 @@
     ./oh-my-posh.nix
     ./packages.nix
     ./ripgrep.nix
+    ./stylix.nix
     ./television.nix
     ./thunderbird.nix
     ./tmux.nix
