@@ -1,7 +1,7 @@
 { ... }:
 
 {
-  services.swww = {
+  programs.amnezia-vpn = {
     enable = true;
   };
 }

@@ -1,14 +1,13 @@
-{ pkgs, ... }:
+{ inputs, pkgs, ... }:
 
 {
+  imports = [
+    inputs.stylix.homeModules.stylix
+  ];
+
   stylix = {
     enable = true;
-    # Good trie themes:
-    # - evenok-dark
-    # - kanagawa-dragon
-    # - tomorrow-night
-    # - ashes
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/github-dark.yaml";
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/rose-pine-moon.yaml";
     fonts = with pkgs; {
       serif = {
         package = eb-garamond;
@@ -19,12 +18,12 @@
         name = "Inter";
       };
       monospace = {
-        package = pkgs.lilex;
-        name = "Lilex";
+        package = nerd-fonts.jetbrains-mono;
+        name = "JetBrainsMono Nerd Font";
       };
       emoji = {
-        package = pkgs.lilex;
-        name = "Lilex";
+        package = nerd-fonts.jetbrains-mono;
+        name = "JetBrainsMono Nerd Font";
       };
     };
     cursor = {

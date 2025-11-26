@@ -7,16 +7,8 @@
     ./services
   ];
 
-  system.stateVersion = "24.11";
-
-  users.users.wardxela = {
-    isNormalUser = true;
-    description = "Alexander";
-    extraGroups = [
-      "networkmanager"
-      "wheel"
-      "adbusers"
-    ];
+  networking = {
+    networkmanager.enable = true;
   };
 
   virtualisation.docker = {
@@ -32,11 +24,6 @@
     };
   };
 
-  networking = {
-    hostName = "nixos";
-    networkmanager.enable = true;
-  };
-
   security.polkit.enable = true;
-  security.rtkit.enable = true; # Enable RealtimeKit for audio purposes
+  security.rtkit.enable = true;
 }

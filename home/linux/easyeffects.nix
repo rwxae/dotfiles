@@ -2,6 +2,7 @@
 
 {
   services.easyeffects = {
-    enable = true;
+    # There are some issues at the moment
+    enable = false;
   };
 }

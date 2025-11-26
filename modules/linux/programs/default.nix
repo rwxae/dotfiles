@@ -2,16 +2,12 @@
 
 {
   imports = [
+    ./adb.nix
+    ./amnezia-vpn.nix
+    ./bash.nix
+    ./gamemode.nix
     ./hyprland.nix
+    ./ssh.nix
     ./steam.nix
   ];
-
-  programs = {
-    adb.enable = true;
-    amnezia-vpn.enable = true;
-    nix-ld.enable = true;
-    ssh.startAgent = true;
-    bash.blesh.enable = true;
-    gamemode.enable = true;
-  };
 }

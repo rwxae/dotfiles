@@ -1,14 +1,8 @@
 { inputs, ... }:
 
 {
-  imports = [ ./stylix.nix ];
-
   nix = {
     settings = {
-      trusted-users = [
-        "root"
-        "wardxela"
-      ];
       experimental-features = [
         "nix-command"
         "flakes"

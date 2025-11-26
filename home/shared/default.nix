@@ -3,6 +3,7 @@
 {
   imports = [
     ./aichat.nix
+    ./asciinema.nix
     ./bash.nix
     ./bat.nix
     ./btop.nix
@@ -14,7 +15,6 @@
     ./gh.nix
     ./git.nix
     ./gitui.nix
-    ./glab.nix
     ./gpg.nix
     ./helix.nix
     ./kitty.nix
@@ -23,6 +23,7 @@
     ./oh-my-posh.nix
     ./packages.nix
     ./ripgrep.nix
+    ./stylix.nix
     ./television.nix
     ./thunderbird.nix
     ./tmux.nix

@@ -20,6 +20,7 @@
     glow
     speedread
     ggh
+    glab
     ffmpeg
     nvd
     termusic

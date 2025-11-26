@@ -1,7 +1,7 @@
 { ... }:
 
 {
-  programs.glab = {
+  programs.gamemode = {
     enable = true;
   };
 }
