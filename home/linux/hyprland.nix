@@ -93,6 +93,11 @@
           "${mod}+control, l, movecurrentworkspacetomonitor, r"
           "${mod}+control, q, killactive"
 
+          "${mod}+control, r, exec, ${launchApp "hyprshot -m region --freeze --clipboard-only"}"
+          "${mod}+control, s, exec, ${launchApp "hyprshot -m output --clipboard-only"}"
+          "${mod}+control+shift, r, exec, ${launchApp "hyprshot -m region --freeze"}"
+          "${mod}+control+shift, s, exec, ${launchApp "hyprshot -m output"}"
+
           (numbers |> map (w: "${mod}, ${w}, workspace, ${w}"))
           (letters |> map (w: "${mod}, ${w}, workspace, name:${w}"))
 

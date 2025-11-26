@@ -5,9 +5,9 @@
     ../shared
     ./chromium.nix
     ./easyeffects.nix
-    ./flameshot.nix
     ./gtk.nix
     ./hyprland.nix
+    ./hyprshot.nix
     ./mpv.nix
     ./mpvpaper.nix
     ./obs.nix
