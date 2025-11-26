@@ -1,8 +1,9 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
   programs.gitui = {
-    enable = true;
+    # TODO: https://github.com/NixOS/nixpkgs/issues/450861
+    enable = pkgs.stdenv.isLinux;
     # See https://github.com/gitui-org/gitui/blob/master/vim_style_key_config.ron
     keyConfig = ''
       (
