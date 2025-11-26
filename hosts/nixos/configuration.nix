@@ -6,7 +6,7 @@
     ./hardware-configuration.nix
   ];
 
-  home-manager.users.wardxela = ./home.nix;
+  system.stateVersion = "24.11";
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -30,10 +30,17 @@
     __GLX_VENDOR_LIBRARY_NAME = "nvidia";
   };
 
-  swapDevices = [
-    {
-      device = "/var/lib/swapfile";
-      size = 16 * 1024;
-    }
-  ];
+  networking.hostName = "nixos";
+
+  home-manager.users.wardxela = ./home.nix;
+
+  users.users.wardxela = {
+    isNormalUser = true;
+    description = "Alexander";
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+      "adbusers"
+    ];
+  };
 }

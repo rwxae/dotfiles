@@ -13,6 +13,16 @@ in
     keyMode = "vi";
     mouse = true;
     terminal = "tmux-256color";
+    plugins = with pkgs.tmuxPlugins; [
+      extrakto
+      fzf-tmux-url
+      fpp
+      # tmux-which-key
+      # mode-indicator
+    ];
+    extraConfig = ''
+      set -g status-position top
+    '';
   };
   home.packages = [ tmx-script ];
 }
