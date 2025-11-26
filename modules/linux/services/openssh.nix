@@ -7,7 +7,6 @@
       PasswordAuthentication = false;
       KbdInteractiveAuthentication = false;
       PermitRootLogin = "no";
-      AllowUsers = [ "wardxela" ];
     };
   };
 }

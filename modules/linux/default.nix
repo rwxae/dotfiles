@@ -9,16 +9,6 @@
 
   system.stateVersion = "24.11";
 
-  users.users.wardxela = {
-    isNormalUser = true;
-    description = "Alexander";
-    extraGroups = [
-      "networkmanager"
-      "wheel"
-      "adbusers"
-    ];
-  };
-
   virtualisation.docker = {
     rootless = {
       enable = true;

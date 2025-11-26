@@ -1,12 +1,10 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
   imports = [
     ../../modules/linux
     ./hardware-configuration.nix
   ];
-
-  home-manager.users.wardxela = ./home.nix;
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -30,10 +28,15 @@
     __GLX_VENDOR_LIBRARY_NAME = "nvidia";
   };
 
-  swapDevices = [
-    {
-      device = "/var/lib/swapfile";
-      size = 16 * 1024;
-    }
-  ];
+  home-manager.users.wardxela = ./home.nix;
+
+  users.users.wardxela = {
+    isNormalUser = true;
+    description = "Alexander";
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+      "adbusers"
+    ];
+  };
 }
