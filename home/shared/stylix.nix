@@ -10,7 +10,7 @@
     base16Scheme = "${pkgs.base16-schemes}/share/themes/rose-pine-moon.yaml";
     fonts = with pkgs; {
       serif = {
-        package = eb-garamond;
+        package = source-serif;
         name = "EB Garamond";
       };
       sansSerif = {

@@ -3,7 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    nix-darwin.url = "github:LnL7/nix-darwin/master";
+    nix-darwin.url = "github:nix-darwin/nix-darwin";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
     nur.url = "github:nix-community/NUR";
     nur.inputs.nixpkgs.follows = "nixpkgs";
@@ -17,7 +17,7 @@
     noctalia.inputs.nixpkgs.follows = "nixpkgs";
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
     zen-browser.inputs.nixpkgs.follows = "nixpkgs";
-    solaar.url = "github:Svenum/Solaar-Flake/main";
+    solaar.url = "github:Svenum/Solaar-Flake";
     solaar.inputs.nixpkgs.follows = "nixpkgs";
     unf.url = "git+https://git.atagen.co/atagen/unf";
     unf.inputs.nixpkgs.follows = "nixpkgs";
