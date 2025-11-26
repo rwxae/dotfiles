@@ -1,10 +1,12 @@
-{ pkgs, ... }:
+{ ... }:
 
 {
   imports = [
     ../../modules/linux
     ./hardware-configuration.nix
   ];
+
+  system.stateVersion = "24.11";
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -27,6 +29,8 @@
     LIBVA_DRIVER_NAME = "nvidia";
     __GLX_VENDOR_LIBRARY_NAME = "nvidia";
   };
+
+  networking.hostName = "nixos";
 
   home-manager.users.wardxela = ./home.nix;
 

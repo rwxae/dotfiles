@@ -7,7 +7,9 @@
     ./services
   ];
 
-  system.stateVersion = "24.11";
+  networking = {
+    networkmanager.enable = true;
+  };
 
   virtualisation.docker = {
     rootless = {
@@ -22,11 +24,6 @@
     };
   };
 
-  networking = {
-    hostName = "nixos";
-    networkmanager.enable = true;
-  };
-
   security.polkit.enable = true;
-  security.rtkit.enable = true; # Enable RealtimeKit for audio purposes
+  security.rtkit.enable = true;
 }
