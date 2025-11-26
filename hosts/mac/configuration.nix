@@ -2,7 +2,7 @@
 
 {
   imports = [
-    ../../modules/darwin
+    ../../systems/darwin
   ];
 
   nixpkgs.hostPlatform = "aarch64-darwin";
