@@ -1,5 +1,5 @@
 {
-  description = "wardxela flake";
+  description = "The Perfect Operating System";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
@@ -28,7 +28,6 @@
       nixpkgs,
       home-manager,
       nur,
-      stylix,
       nix-darwin,
       ...
     }:
@@ -53,6 +52,10 @@
             ./hosts/mac/configuration.nix
           ];
         };
+      };
+
+      formatter = {
+        x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.nixfmt-tree;
       };
     };
 }
