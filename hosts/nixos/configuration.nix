@@ -13,17 +13,18 @@
   boot.kernelParams = [ "libata.noacpi=1" ];
 
   hardware = {
-    graphics.enable = true;
-    nvidia = {
-      open = true;
+    enableAllFirmware = true;
+    cpu.intel.updateMicrocode = true;
+    graphics = {
+      enable = true;
+      enable32Bit = true;
     };
+    nvidia.open = true;
     bluetooth = {
       enable = true;
       powerOnBoot = true;
     };
   };
-
-  services.xserver.videoDrivers = [ "nvidia" ];
 
   environment.variables = {
     LIBVA_DRIVER_NAME = "nvidia";
