@@ -14,7 +14,6 @@
 
   hardware = {
     enableAllFirmware = true;
-    cpu.intel.updateMicrocode = true;
     graphics = {
       enable = true;
       enable32Bit = true;
