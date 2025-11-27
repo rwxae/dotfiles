@@ -15,23 +15,23 @@
         };
       }
       {
-        context = "!menu && vim_mode == normal";
+        context = "!Editor || !menu && vim_mode == normal";
         bindings = {
-          "space f f" = [
+          "space f" = [
             "task::Spawn"
             {
               task_name = "File Finder";
               reveal_target = "center";
             }
           ];
-          "space f g" = [
+          "space /" = [
             "task::Spawn"
             {
               task_name = "Find in Files";
               reveal_target = "center";
             }
           ];
-          "space f b" = "tab_switcher::ToggleAll";
+          "space b" = "tab_switcher::ToggleAll";
           "space t" = "project_panel::ToggleFocus";
           "space g" = "git_panel::ToggleFocus";
           "space a" = "agent::ToggleFocus";
