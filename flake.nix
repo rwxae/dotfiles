@@ -41,6 +41,14 @@
             ./hosts/nixos/configuration.nix
           ];
         };
+        beast = nixpkgs.lib.nixosSystem {
+          specialArgs = { inherit inputs; };
+          modules = [
+            nur.modules.nixos.default
+            home-manager.nixosModules.home-manager
+            ./hosts/beast/configuration.nix
+          ];
+        };
       };
 
       darwinConfigurations = {
