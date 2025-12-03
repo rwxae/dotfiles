@@ -8,4 +8,11 @@
   };
 
   programs.btop.settings.shown_boxes = "proc cpu mem net gpu0";
+
+  mySystem.hyprland = {
+    monitors = {
+      primary = "DP-4";
+      secondary = "HDMI-A-2";
+    };
+  };
 }
