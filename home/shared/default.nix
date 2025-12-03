@@ -6,6 +6,7 @@
     ./asciinema.nix
     ./bash.nix
     ./bat.nix
+    ./bottom.nix
     ./btop.nix
     ./direnv.nix
     ./eza.nix
