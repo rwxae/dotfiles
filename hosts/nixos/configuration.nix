@@ -8,6 +8,8 @@
 
   system.stateVersion = "24.11";
 
+  nixpkgs.config.cudaSupport = true;
+
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.kernelParams = [ "libata.noacpi=1" ];
