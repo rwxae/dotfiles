@@ -29,27 +29,28 @@
       home-manager,
       nur,
       nix-darwin,
+      stylix,
       ...
     }:
     {
-      nixosConfigurations = {
-        nixos = nixpkgs.lib.nixosSystem {
-          specialArgs = { inherit inputs; };
-          modules = [
+      nixosConfigurations =
+        let
+          nixosModules = [
             nur.modules.nixos.default
             home-manager.nixosModules.home-manager
-            ./hosts/nixos/configuration.nix
+            stylix.nixosModules.stylix
           ];
+        in
+        {
+          nixos = nixpkgs.lib.nixosSystem {
+            specialArgs = { inherit inputs; };
+            modules = [ ./hosts/nixos/configuration.nix ] ++ nixosModules;
+          };
+          beast = nixpkgs.lib.nixosSystem {
+            specialArgs = { inherit inputs; };
+            modules = [ ./hosts/beast/configuration.nix ] ++ nixosModules;
+          };
         };
-        beast = nixpkgs.lib.nixosSystem {
-          specialArgs = { inherit inputs; };
-          modules = [
-            nur.modules.nixos.default
-            home-manager.nixosModules.home-manager
-            ./hosts/beast/configuration.nix
-          ];
-        };
-      };
 
       darwinConfigurations = {
         mac = nix-darwin.lib.darwinSystem {
@@ -57,6 +58,7 @@
           modules = [
             nur.modules.darwin.default
             home-manager.darwinModules.home-manager
+            stylix.darwinModules.stylix
             ./hosts/mac/configuration.nix
           ];
         };

@@ -1,6 +1,8 @@
 { inputs, ... }:
 
 {
+  imports = [ ./stylix.nix ];
+
   nix = {
     settings = {
       auto-optimise-store = true;
