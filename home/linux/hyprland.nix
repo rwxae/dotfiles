@@ -77,7 +77,6 @@
               "float, class:^(nemo)$"
               "workspace name:e silent, class:^(dev.zed.Zed)$"
               "workspace name:r silent, class:^(thunderbird)$"
-              "workspace name:t silent, class:^(org.telegram.desktop)$"
               "workspace name:a silent, class:^(anytype)$"
               "workspace name:s silent, class:^(Slack)$"
               "workspace name:d silent, class:^(discord)$"
@@ -136,7 +135,6 @@
             exec-once = [
               (launchApp "zeditor")
               (launchApp "thunderbird")
-              (launchApp "Telegram")
               (launchApp "anytype")
               (launchApp "slack")
               (launchApp "discord")

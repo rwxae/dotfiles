@@ -276,7 +276,6 @@
           "number 10" = [ { class = "^Chromium-browser$"; } ];
           "e" = [ { app_id = "dev.zed.Zed"; } ];
           "r" = [ { app_id = "thunderbird"; } ];
-          "t" = [ { app_id = "org.telegram.desktop"; } ];
           "a" = [ { app_id = "anytype"; } ];
           "s" = [ { app_id = "Slack"; } ];
           "d" = [ { class = "^discord$"; } ];
@@ -294,9 +293,6 @@
           }
           {
             command = "thunderbird";
-          }
-          {
-            command = "Telegram";
           }
           {
             command = "anytype";
