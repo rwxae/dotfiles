@@ -1,4 +1,4 @@
-{ config, inputs, ... }:
+{ inputs, config, ... }:
 
 {
   imports = [
@@ -8,24 +8,82 @@
   programs.noctalia-shell = {
     enable = true;
     systemd.enable = true;
-    # TODO: ideally it should be implemented on stylix side
-    colors = with config.lib.stylix.colors.withHashtag; {
-      mPrimary = base05;
-      mOnPrimary = base00;
-      mSecondary = base05;
-      mOnSecondary = base00;
-      mTertiary = base04;
-      mOnTertiary = base00;
-      mError = base08;
-      mOnError = base00;
-      mSurface = base00;
-      mOnSurface = base05;
-      mHover = base04;
-      mOnHover = base00;
-      mSurfaceVariant = base01;
-      mOnSurfaceVariant = base04;
-      mOutline = base02;
-      mShadow = base00;
-    };
+    settings =
+      let
+        monitors = [ config.mySystem.monitors.secondary ];
+      in
+      {
+        bar = {
+          inherit monitors;
+          outerCorners = false;
+          widgets = {
+            left = [
+              {
+                id = "SystemMonitor";
+                showDiskUsage = true;
+                showNetworkStats = true;
+              }
+            ];
+            center = [
+              {
+                id = "MediaMini";
+                maxWidth = 300;
+                showAlbumArt = true;
+              }
+            ];
+            right = [
+              {
+                id = "Tray";
+                colorizeIcons = true;
+                drawerEnabled = false;
+              }
+              {
+                id = "KeyboardLayout";
+                displayMode = "forceOpen";
+              }
+              {
+                id = "Volume";
+                displayMode = "alwaysShow";
+              }
+              {
+                id = "Bluetooth";
+              }
+              {
+                id = "NotificationHistory";
+              }
+              {
+                id = "Clock";
+                formatHorizontal = "h:mm AP";
+                formatVertical = "h:mm AP";
+              }
+              {
+                id = "ControlCenter";
+                useDistroLogo = true;
+                colorizeSystemIcon = "primary";
+                enableColorization = true;
+              }
+            ];
+          };
+        };
+        general = {
+          animationDisabled = true;
+          enableShadows = false;
+          dimmerOpacity = 0;
+        };
+        ui = {
+          tooltipsEnabled = false;
+        };
+        dock.enabled = false;
+        notifications = {
+          inherit monitors;
+        };
+        osd = {
+          inherit monitors;
+          location = "bottom";
+        };
+        colorSchemes = {
+          generateTemplatesForPredefined = false;
+        };
+      };
   };
 }

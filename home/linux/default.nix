@@ -3,6 +3,7 @@
 {
   imports = [
     ../shared
+    ./options.nix
     ./chromium.nix
     ./easyeffects.nix
     ./gtk.nix

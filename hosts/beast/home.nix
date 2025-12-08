@@ -9,7 +9,7 @@
 
   programs.btop.settings.shown_boxes = "proc cpu mem net gpu0";
 
-  mySystem.hyprland = {
+  mySystem = {
     monitors = {
       primary = "DP-4";
       secondary = "HDMI-A-2";
