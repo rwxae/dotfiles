@@ -52,6 +52,7 @@
       "lua"
       "mcp-server-context7"
       "mcp-server-github"
+      "mdx"
       "nix"
       "php"
       "prisma"
