@@ -1,4 +1,4 @@
-{ ... }:
+{ lib, pkgs, ... }:
 
 {
   programs.zed-editor = {
@@ -146,6 +146,7 @@
             };
           };
         lsp = {
+          package-version-server.binary.path = lib.getExe pkgs.package-version-server;
           nil = {
             settings = {
               nix.flake.autoArchive = true;
