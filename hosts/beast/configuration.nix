@@ -36,6 +36,18 @@
 
   networking.hostName = "beast";
 
+  services.zapret = {
+    enable = true;
+    params = [
+      "--dpi-desync=fake,fakedsplit"
+      "--dpi-desync-fooling=badseq"
+      "--dpi-desync-split-pos=1"
+      "--dpi-desync-fake-tls=0x00000000"
+      "--dpi-desync-fake-tls=!"
+      "--dpi-desync-fake-tls-mod=rnd,rndsni,dupsid"
+    ];
+  };
+
   home-manager.users.rwxae = ./home.nix;
 
   users.users.rwxae = {
