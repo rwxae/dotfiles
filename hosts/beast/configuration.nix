@@ -6,7 +6,7 @@
     ./hardware-configuration.nix
   ];
 
-  system.stateVersion = "24.11";
+  system.stateVersion = "25.05";
 
   nixpkgs.config.cudaSupport = true;
 
@@ -34,11 +34,23 @@
     __GLX_VENDOR_LIBRARY_NAME = "nvidia";
   };
 
-  networking.hostName = "nixos";
+  networking.hostName = "beast";
 
-  home-manager.users.wardxela = ./home.nix;
+  services.zapret = {
+    enable = true;
+    params = [
+      "--dpi-desync=fake,fakedsplit"
+      "--dpi-desync-fooling=badseq"
+      "--dpi-desync-split-pos=1"
+      "--dpi-desync-fake-tls=0x00000000"
+      "--dpi-desync-fake-tls=!"
+      "--dpi-desync-fake-tls-mod=rnd,rndsni,dupsid"
+    ];
+  };
 
-  users.users.wardxela = {
+  home-manager.users.rwxae = ./home.nix;
+
+  users.users.rwxae = {
     isNormalUser = true;
     description = "Alexander";
     extraGroups = [

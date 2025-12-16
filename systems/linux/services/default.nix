@@ -4,7 +4,7 @@
   imports = [
     ./gnome.nix
     ./greetd.nix
-    ./noctalia.nix
+    ./locate.nix
     ./openssh.nix
     ./pipewire.nix
     ./solaar.nix

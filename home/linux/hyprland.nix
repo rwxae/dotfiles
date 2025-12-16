@@ -1,4 +1,9 @@
-{ lib, pkgs, ... }:
+{
+  lib,
+  pkgs,
+  config,
+  ...
+}:
 
 {
   wayland.windowManager.hyprland = {
@@ -12,8 +17,8 @@
     settings =
       let
         mod = "SUPER";
-        mainMonitor = "DP-1";
-        secondMonitor = "HDMI-A-2";
+        primaryMonitor = config.mySystem.monitors.primary;
+        secondaryMonitor = config.mySystem.monitors.secondary;
         numbers = lib.stringToCharacters "123456789";
         letters = lib.stringToCharacters "abcdefgimnopqrstuvwxyz";
         launchApp = app: "uwsm app -- ${app}";
@@ -27,8 +32,8 @@
         };
 
         monitor = [
-          "${mainMonitor}, 1920x1080@144, 1920x0, 1"
-          "${secondMonitor}, 1920x1080@60, 0x0, 1"
+          "${primaryMonitor}, 1920x1080@144, 1920x0, 1"
+          "${secondaryMonitor}, 1920x1080@60, 0x0, 1"
         ];
 
         general = {
@@ -54,7 +59,6 @@
           "float, class:^(nemo)$"
           "workspace name:e silent, class:^(dev.zed.Zed)$"
           "workspace name:r silent, class:^(thunderbird)$"
-          "workspace name:t silent, class:^(org.telegram.desktop)$"
           "workspace name:a silent, class:^(anytype)$"
           "workspace name:s silent, class:^(Slack)$"
           "workspace name:d silent, class:^(discord)$"
@@ -65,9 +69,9 @@
         ];
 
         workspace = lib.flatten [
-          (numbers |> map (w: "${w}, monitor:${mainMonitor}"))
-          "name:f, monitor:${secondMonitor}"
-          (letters |> builtins.filter (w: w != "f") |> map (w: "name:${w}, monitor:${mainMonitor}"))
+          (numbers |> map (w: "${w}, monitor:${primaryMonitor}"))
+          "name:f, monitor:${secondaryMonitor}"
+          (letters |> builtins.filter (w: w != "f") |> map (w: "name:${w}, monitor:${primaryMonitor}"))
         ];
 
         bind = lib.flatten [
@@ -113,7 +117,6 @@
         exec-once = [
           (launchApp "zeditor")
           (launchApp "thunderbird")
-          (launchApp "Telegram")
           (launchApp "anytype")
           (launchApp "slack")
           (launchApp "discord")
@@ -122,6 +125,7 @@
         ];
       };
   };
+
   # TODO: https://github.com/nix-community/stylix/issues/478
   home.pointerCursor.hyprcursor.enable = true;
 }

@@ -1,4 +1,4 @@
-{ ... }:
+{ lib, pkgs, ... }:
 
 {
   programs.zed-editor = {
@@ -15,23 +15,23 @@
         };
       }
       {
-        context = "!menu && vim_mode == normal";
+        context = "!Editor || !menu && vim_mode == normal";
         bindings = {
-          "space f f" = [
+          "space f" = [
             "task::Spawn"
             {
               task_name = "File Finder";
               reveal_target = "center";
             }
           ];
-          "space f g" = [
+          "space /" = [
             "task::Spawn"
             {
               task_name = "Find in Files";
               reveal_target = "center";
             }
           ];
-          "space f b" = "tab_switcher::ToggleAll";
+          "space b" = "tab_switcher::ToggleAll";
           "space t" = "project_panel::ToggleFocus";
           "space g" = "git_panel::ToggleFocus";
           "space a" = "agent::ToggleFocus";
@@ -52,6 +52,7 @@
       "lua"
       "mcp-server-context7"
       "mcp-server-github"
+      "mdx"
       "nix"
       "php"
       "prisma"
@@ -145,6 +146,7 @@
             };
           };
         lsp = {
+          package-version-server.binary.path = lib.getExe pkgs.package-version-server;
           nil = {
             settings = {
               nix.flake.autoArchive = true;
@@ -154,10 +156,10 @@
             };
           };
         };
+        colorize_brackets = true;
         features = {
           edit_prediction_provider = "none";
         };
-        restore_on_startup = "none";
         telemetry = {
           diagnostics = false;
           metrics = false;

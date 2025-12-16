@@ -9,18 +9,14 @@
     nur.inputs.nixpkgs.follows = "nixpkgs";
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
-    stylix.url = "github:danth/stylix";
+    stylix.url = "github:nix-community/stylix";
     stylix.inputs.nixpkgs.follows = "nixpkgs";
-    quickshell.url = "github:outfoxxed/quickshell";
-    quickshell.inputs.nixpkgs.follows = "nixpkgs";
     noctalia.url = "github:noctalia-dev/noctalia-shell";
     noctalia.inputs.nixpkgs.follows = "nixpkgs";
-    zen-browser.url = "github:0xc000022070/zen-browser-flake";
+    zen-browser.url = "github:0xc000022070/zen-browser-flake/beta";
     zen-browser.inputs.nixpkgs.follows = "nixpkgs";
     solaar.url = "github:Svenum/Solaar-Flake";
     solaar.inputs.nixpkgs.follows = "nixpkgs";
-    unf.url = "git+https://git.atagen.co/atagen/unf";
-    unf.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs =
@@ -29,19 +25,28 @@
       home-manager,
       nur,
       nix-darwin,
+      stylix,
       ...
     }:
     {
-      nixosConfigurations = {
-        nixos = nixpkgs.lib.nixosSystem {
-          specialArgs = { inherit inputs; };
-          modules = [
+      nixosConfigurations =
+        let
+          nixosModules = [
             nur.modules.nixos.default
             home-manager.nixosModules.home-manager
-            ./hosts/nixos/configuration.nix
+            stylix.nixosModules.stylix
           ];
+        in
+        {
+          nixos = nixpkgs.lib.nixosSystem {
+            specialArgs = { inherit inputs; };
+            modules = [ ./hosts/nixos/configuration.nix ] ++ nixosModules;
+          };
+          beast = nixpkgs.lib.nixosSystem {
+            specialArgs = { inherit inputs; };
+            modules = [ ./hosts/beast/configuration.nix ] ++ nixosModules;
+          };
         };
-      };
 
       darwinConfigurations = {
         mac = nix-darwin.lib.darwinSystem {
@@ -49,6 +54,7 @@
           modules = [
             nur.modules.darwin.default
             home-manager.darwinModules.home-manager
+            stylix.darwinModules.stylix
             ./hosts/mac/configuration.nix
           ];
         };

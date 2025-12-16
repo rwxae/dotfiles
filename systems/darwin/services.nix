@@ -147,10 +147,6 @@
           run = "move-node-to-workspace R";
         }
         {
-          "if".app-id = "com.tdesktop.Telegram";
-          run = "move-node-to-workspace T";
-        }
-        {
           "if".app-id = "com.anytype.anytype";
           run = "move-node-to-workspace A";
         }
