@@ -22,7 +22,6 @@
     glab
     ffmpeg
     nvd
-    termusic
     git-open
 
     # Archiving and compression
@@ -36,7 +35,19 @@
 
     # Development Tools
     devenv
-    nixfmt
+
+    # LSP
+    astro-language-server
+    bash-language-server
+    docker-compose-language-service
+    dockerfile-language-server
+    # superhtml
+    typescript-language-server
+    vscode-langservers-extracted
+    marksman
     nil
+    prisma-language-server
+    taplo
+    yaml-language-server
   ];
 }
