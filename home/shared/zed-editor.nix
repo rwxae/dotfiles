@@ -4,6 +4,8 @@
   programs.zed-editor = {
     enable = true;
     installRemoteServer = true;
+    mutableUserKeymaps = false;
+    mutableUserTasks = false;
     userKeymaps = [
       {
         context = "vim_operator == a || vim_operator == i || vim_operator == cs";
@@ -15,8 +17,16 @@
         };
       }
       {
+        context = "vim_mode == normal || vim_mode == visual";
+        bindings = {
+          s = "vim::PushSneak";
+          S = "vim::PushSneakBackward";
+        };
+      }
+      {
         context = "!Editor || !menu && vim_mode == normal";
         bindings = {
+          "space space" = "file_finder::Toggle";
           "space f" = [
             "task::Spawn"
             {
@@ -32,9 +42,13 @@
             }
           ];
           "space b" = "tab_switcher::ToggleAll";
+          "space e" = "workspace::ToggleRightDock";
           "space t" = "project_panel::ToggleFocus";
           "space g" = "git_panel::ToggleFocus";
           "space a" = "agent::ToggleFocus";
+          "space p" = "markdown::OpenPreviewToTheSide";
+          "space r" = "projects::OpenRecent";
+          "space w" = "editor::ToggleSoftWrap";
         };
       }
     ];
@@ -88,7 +102,6 @@
         };
         status_bar = {
           active_language_button = false;
-          cursor_position_button = false;
         };
         tab_bar.show = false;
         project_panel = {
