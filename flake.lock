@@ -256,6 +256,22 @@
         "type": "github"
       }
     },
+    "nixpkgsForVscode": {
+      "locked": {
+        "lastModified": 1712473363,
+        "narHash": "sha256-TIScFAVdI2yuybMxxNjC4YZ/j++c64wwuKbpnZnGiyU=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "e89cf1c932006531f454de7d652163a9a5c86668",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "e89cf1c932006531f454de7d652163a9a5c86668",
+        "type": "github"
+      }
+    },
     "noctalia": {
       "inputs": {
         "nixpkgs": [
@@ -327,6 +343,7 @@
         "home-manager": "home-manager",
         "nix-darwin": "nix-darwin",
         "nixpkgs": "nixpkgs",
+        "nixpkgsForVscode": "nixpkgsForVscode",
         "noctalia": "noctalia",
         "nur": "nur",
         "solaar": "solaar",

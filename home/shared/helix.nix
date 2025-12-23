@@ -41,6 +41,12 @@
           command = lib.getExe pkgs.emmet-language-server;
           args = [ "--stdio" ];
         };
+        # TODO: it doesn't work
+        # vscode-eslint-language-server = {
+        #   config.codeActionsOnSave = {
+        #     "source.fixAll.eslint" = true;
+        #   };
+        # };
       };
       language =
         let
@@ -53,8 +59,7 @@
           };
           typescript = {
             name = "typescript-language-server";
-            # TODO: Once ESLint is fixed, disable format feature
-            # except-features = [ "format" ];
+            except-features = [ "format" ];
           };
           # TODO: Add support for ESLint. Server does not work at the moment
           # ESLint should be implemented as LSP with format feature enabled

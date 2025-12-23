@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgsForVscode.url = "github:NixOS/nixpkgs/e89cf1c932006531f454de7d652163a9a5c86668";
     nix-darwin.url = "github:nix-darwin/nix-darwin";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
     nur.url = "github:nix-community/NUR";

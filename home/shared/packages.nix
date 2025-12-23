@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ inputs, pkgs, ... }:
 
 {
   home.packages = with pkgs; [
@@ -43,7 +43,7 @@
     dockerfile-language-server
     # superhtml
     typescript-language-server
-    vscode-langservers-extracted
+    inputs.nixpkgsForVscode.legacyPackages.${pkgs.stdenv.system}.vscode-langservers-extracted
     marksman
     nil
     prisma-language-server
