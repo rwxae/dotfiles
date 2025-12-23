@@ -76,6 +76,13 @@
         in
         [
           {
+            name = "git-commit";
+            language-servers = [
+              "commit-lsp"
+              "codebook"
+            ];
+          }
+          {
             name = "markdown";
             language-servers = [
               "marksman"
