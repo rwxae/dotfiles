@@ -12,6 +12,18 @@
             o = ":reset-diff-change";
             i = ":sh git show --no-patch --format='%%h (%%an: %%ar): %%s' $(git blame -p %{buffer_name} -L%{cursor_line},+1 | head -1 | cut -d' ' -f1)";
           };
+          C-e = [
+            ":sh rm -f /tmp/unique-file-h21a434"
+            ":insert-output yazi '%{buffer_name}' --chooser-file=/tmp/unique-file-h21a434"
+            ":insert-output echo \"x1b[?1049h\" > /dev/tty"
+            ":open %sh{cat /tmp/unique-file-h21a434}"
+            ":redraw"
+          ];
+          C-g = [
+            ":insert-output gitui >/dev/tty"
+            ":redraw"
+            ":reload-all"
+          ];
         };
       };
     };
@@ -39,6 +51,13 @@
               parser
             ];
           };
+          typescript = {
+            name = "typescript-language-server";
+            # TODO: Once ESLint is fixed, disable format feature
+            # except-features = [ "format" ];
+          };
+          # TODO: Add support for ESLint. Server does not work at the moment
+          # ESLint should be implemented as LSP with format feature enabled
           # eslintFormatter = {
           #   command = "npx";
           #   args = [
@@ -100,10 +119,7 @@
           {
             name = "javascript";
             language-servers = [
-              {
-                name = "typescript-language-server";
-                except-features = [ "format" ];
-              }
+              typescript
               "vscode-eslint-language-server"
               "tailwindcss"
               "codebook"
@@ -114,10 +130,7 @@
           {
             name = "typescript";
             language-servers = [
-              {
-                name = "typescript-language-server";
-                except-features = [ "format" ];
-              }
+              typescript
               "vscode-eslint-language-server"
               "tailwindcss"
               "codebook"
@@ -128,10 +141,7 @@
           {
             name = "jsx";
             language-servers = [
-              {
-                name = "typescript-language-server";
-                except-features = [ "format" ];
-              }
+              typescript
               "vscode-eslint-language-server"
               "tailwindcss"
               "codebook"
@@ -142,16 +152,20 @@
           {
             name = "tsx";
             language-servers = [
-              {
-                name = "typescript-language-server";
-                except-features = [ "format" ];
-              }
+              typescript
               "vscode-eslint-language-server"
               "tailwindcss"
               "codebook"
             ];
             # formatter = eslintFormatter;
             auto-format = true;
+          }
+          {
+            name = "rust";
+            language-servers = [
+              "rust-analyzer"
+              "codebook"
+            ];
           }
         ];
     };
