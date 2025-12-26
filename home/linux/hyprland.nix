@@ -115,7 +115,6 @@
         ];
 
         exec-once = [
-          (launchApp "zeditor")
           (launchApp "thunderbird")
           (launchApp "anytype")
           (launchApp "slack")
@@ -123,6 +122,10 @@
           (launchApp "zen-beta")
           (launchApp "kitty")
         ];
+
+        "plugin:dynamic-cursors" = {
+          shake.enabled = false;
+        };
       };
   };
 
