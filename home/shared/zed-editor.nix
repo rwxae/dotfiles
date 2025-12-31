@@ -61,7 +61,6 @@
       "emmet"
       "env"
       "git-firefly"
-      "github-theme"
       "html"
       "lua"
       "mcp-server-context7"

@@ -3,7 +3,6 @@
 {
   home.packages = with pkgs; [
     # GUI
-    authenticator
     pwvucontrol
     prismlauncher
     heroic
