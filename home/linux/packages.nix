@@ -7,6 +7,7 @@
     prismlauncher
     heroic
     vial
+    piper
     nemo
     krita
     yandex-music

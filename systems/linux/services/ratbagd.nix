@@ -1,0 +1,7 @@
+{ ... }:
+
+{
+  services.ratbagd = {
+    enable = true;
+  };
+}

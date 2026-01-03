@@ -7,6 +7,7 @@
     ./locate.nix
     ./openssh.nix
     ./pipewire.nix
+    ./ratbagd.nix
     ./udev.nix
   ];
 }
