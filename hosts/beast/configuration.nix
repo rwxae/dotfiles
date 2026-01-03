@@ -25,6 +25,12 @@
       enable = true;
       powerOnBoot = true;
     };
+    logitech = {
+      wireless = {
+        enable = true;
+        enableGraphical = true;
+      };
+    };
   };
 
   services.xserver.videoDrivers = [ "nvidia" ];

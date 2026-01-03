@@ -13,9 +13,6 @@ let
   # noctaliaHomeOptions = mkOptions [
   #   inputs.noctalia.homeModules.default
   # ];
-  # solaarOptions = mkOptions [
-  #   inputs.solaar.nixosModules.default
-  # ];
   ns-script =
     {
       url = "https://raw.githubusercontent.com/3timeslazy/nix-search-tv/refs/heads/main/nixpkgs.sh";

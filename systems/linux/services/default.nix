@@ -7,7 +7,6 @@
     ./locate.nix
     ./openssh.nix
     ./pipewire.nix
-    ./solaar.nix
     ./udev.nix
   ];
 }
