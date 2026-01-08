@@ -50,22 +50,19 @@
         animations.enabled = false;
 
         layerrule = [
-          "blur, vicinae"
-          "ignorealpha 0, vicinae"
+          "blur on, ignore_alpha 0, match:namespace vicinae"
         ];
 
-        windowrulev2 = [
-          "float, class:^(com.saivert.pwvucontrol)$"
-          "float, class:^(nemo)$"
-          "workspace name:e silent, class:^(dev.zed.Zed)$"
-          "workspace name:r silent, class:^(thunderbird)$"
-          "workspace name:a silent, class:^(anytype)$"
-          "workspace name:s silent, class:^(Slack)$"
-          "workspace name:d silent, class:^(discord)$"
-          "workspace name:f silent, class:^(zen-beta)$"
-          "workspace name:g silent, class:^(kitty)$"
-          "workspace name:c silent, class:^(chromium-browser)$"
-          "workspace name:b silent, class:^(org.pwmt.zathura)$"
+        windowrule = [
+          "float on, match:class com.saivert.pwvucontrol"
+          "float on, match:class nemo"
+          "workspace name:r silent, match:class thunderbird"
+          "workspace name:a silent, match:class anytype"
+          "workspace name:s silent, match:class Slack"
+          "workspace name:d silent, match:class discord"
+          "workspace name:f silent, match:class zen-beta"
+          "workspace name:g silent, match:class kitty"
+          "workspace name:c silent, match:class chromium-browser"
         ];
 
         workspace = lib.flatten [
