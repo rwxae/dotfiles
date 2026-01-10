@@ -6,52 +6,52 @@
     installRemoteServer = true;
     mutableUserKeymaps = false;
     mutableUserTasks = false;
-    userKeymaps = [
-      {
-        context = "vim_operator == a || vim_operator == i || vim_operator == cs";
-        bindings = {
-          q = "vim::AnyQuotes";
-          b = "vim::AnyBrackets";
-          Q = "vim::MiniQuotes";
-          B = "vim::MiniBrackets";
-        };
-      }
-      {
-        context = "vim_mode == normal || vim_mode == visual";
-        bindings = {
-          s = "vim::PushSneak";
-          S = "vim::PushSneakBackward";
-        };
-      }
-      {
-        context = "!Editor || !menu && vim_mode == normal";
-        bindings = {
-          "space space" = "file_finder::Toggle";
-          "space f" = [
-            "task::Spawn"
-            {
-              task_name = "File Finder";
-              reveal_target = "center";
-            }
-          ];
-          "space /" = [
-            "task::Spawn"
-            {
-              task_name = "Find in Files";
-              reveal_target = "center";
-            }
-          ];
-          "space b" = "tab_switcher::ToggleAll";
-          "space e" = "workspace::ToggleRightDock";
-          "space t" = "project_panel::ToggleFocus";
-          "space g" = "git_panel::ToggleFocus";
-          "space a" = "agent::ToggleFocus";
-          "space p" = "markdown::OpenPreviewToTheSide";
-          "space r" = "projects::OpenRecent";
-          "space w" = "editor::ToggleSoftWrap";
-        };
-      }
-    ];
+    # userKeymaps = [
+    #   {
+    #     context = "vim_operator == a || vim_operator == i || vim_operator == cs";
+    #     bindings = {
+    #       q = "vim::AnyQuotes";
+    #       b = "vim::AnyBrackets";
+    #       Q = "vim::MiniQuotes";
+    #       B = "vim::MiniBrackets";
+    #     };
+    #   }
+    #   {
+    #     context = "vim_mode == normal || vim_mode == visual";
+    #     bindings = {
+    #       s = "vim::PushSneak";
+    #       S = "vim::PushSneakBackward";
+    #     };
+    #   }
+    #   {
+    #     context = "!Editor || !menu && vim_mode == normal";
+    #     bindings = {
+    #       "space space" = "file_finder::Toggle";
+    #       "space f" = [
+    #         "task::Spawn"
+    #         {
+    #           task_name = "File Finder";
+    #           reveal_target = "center";
+    #         }
+    #       ];
+    #       "space /" = [
+    #         "task::Spawn"
+    #         {
+    #           task_name = "Find in Files";
+    #           reveal_target = "center";
+    #         }
+    #       ];
+    #       "space b" = "tab_switcher::ToggleAll";
+    #       "space e" = "workspace::ToggleRightDock";
+    #       "space t" = "project_panel::ToggleFocus";
+    #       "space g" = "git_panel::ToggleFocus";
+    #       "space a" = "agent::ToggleFocus";
+    #       "space p" = "markdown::OpenPreviewToTheSide";
+    #       "space r" = "projects::OpenRecent";
+    #       "space w" = "editor::ToggleSoftWrap";
+    #     };
+    #   }
+    # ];
     extensions = [
       "astro"
       "codebook"
@@ -80,7 +80,7 @@
         dock = "right";
       in
       {
-        vim_mode = true;
+        helix_mode = true;
         buffer_font_features = {
           calt = false;
         };
