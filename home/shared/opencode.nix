@@ -12,6 +12,7 @@
           models = {
             "qwen3-coder:30b".name = "qwen3-coder";
             "gpt-oss:20b".name = "gpt-oss";
+            "qwen3:8b".name = "qwen3 (8b)";
           };
         };
       };
