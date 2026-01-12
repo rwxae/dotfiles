@@ -67,6 +67,24 @@
               parser
             ];
           };
+          # TODO: ESLint should be implemented as LSP with format feature enabled
+          eslintFormatter = {
+            command =
+              {
+                name = "eslint-fix";
+                runtimeInputs = with pkgs; [
+                  eslint_d
+                ];
+                text = ''
+                  eslint_d --fix-to-stdout --stdin --stdin-filename "$(pwd)"/"$(basename "$1")"
+                '';
+              }
+              |> pkgs.writeShellApplication
+              |> lib.getExe;
+            args = [
+              "%{buffer_name}"
+            ];
+          };
           typescript = {
             name = "typescript-language-server";
             except-features = [ "format" ];
@@ -75,18 +93,6 @@
             "codebook"
             # "ai"
           ];
-          # TODO: Add support for ESLint. Server does not work at the moment
-          # ESLint should be implemented as LSP with format feature enabled
-          # eslintFormatter = {
-          #   command = "npx";
-          #   args = [
-          #     "eslint"
-          #     "--stdin"
-          #     "--fix-to-stdout"
-          #     "--stdin-filename %{buffer_name}"
-          #     "--flag v10_config_lookup_from_file"
-          #   ];
-          # };
         in
         [
           {
@@ -150,7 +156,7 @@
               "tailwindcss"
             ]
             ++ commonLSPs;
-            # formatter = eslintFormatter;
+            formatter = eslintFormatter;
             auto-format = true;
           }
           {
@@ -161,7 +167,7 @@
               "tailwindcss"
             ]
             ++ commonLSPs;
-            # formatter = eslintFormatter;
+            formatter = eslintFormatter;
             auto-format = true;
           }
           {
@@ -172,7 +178,7 @@
               "tailwindcss"
             ]
             ++ commonLSPs;
-            # formatter = eslintFormatter;
+            formatter = eslintFormatter;
             auto-format = true;
           }
           {
@@ -183,7 +189,7 @@
               "tailwindcss"
             ]
             ++ commonLSPs;
-            # formatter = eslintFormatter;
+            formatter = eslintFormatter;
             auto-format = true;
           }
           {
