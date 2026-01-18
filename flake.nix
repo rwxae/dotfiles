@@ -16,6 +16,8 @@
     noctalia.inputs.nixpkgs.follows = "nixpkgs";
     zen-browser.url = "github:0xc000022070/zen-browser-flake/beta";
     zen-browser.inputs.nixpkgs.follows = "nixpkgs";
+    spicetify-nix.url = "github:Gerg-L/spicetify-nix";
+    spicetify-nix.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs =

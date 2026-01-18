@@ -24,6 +24,7 @@
     ./opencode.nix
     ./packages.nix
     ./ripgrep.nix
+    ./spicetify.nix
     ./television.nix
     ./thunderbird.nix
     ./tmux.nix
