@@ -5,7 +5,10 @@
     enable = true;
     defaultEditor = true;
     settings = {
-      editor.cursor-shape.insert = "bar";
+      editor = {
+        cursor-shape.insert = "bar";
+        default-yank-register = "+";
+      };
       keys = {
         normal = {
           space = {
