@@ -5,7 +5,6 @@
     # GUI
     qbittorrent
     hoppscotch
-    discord
     slack
 
     # CLI

@@ -12,6 +12,7 @@
     krita
     yandex-music
     hyprpicker
+    (discord.override { withVencord = true; })
 
     # CLI
     android-tools
