@@ -1,7 +1,7 @@
 { ... }:
 
 {
-  programs.adb = {
+  services.ratbagd = {
     enable = true;
   };
 }

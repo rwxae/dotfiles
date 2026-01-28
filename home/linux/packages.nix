@@ -3,23 +3,25 @@
 {
   home.packages = with pkgs; [
     # GUI
-    authenticator
     pwvucontrol
     prismlauncher
     heroic
     vial
+    piper
     nemo
     krita
     yandex-music
     hyprpicker
+    (discord.override { withVencord = true; })
 
     # CLI
+    android-tools
     tesseract
     playerctl
     wl-clipboard
 
-    # TODO: Should be in the /shared/packages
-    anytype # https://github.com/NixOS/nixpkgs/pull/411491
+    # TODO: Should be in the /shared/packages (broken on darwin)
+    anytype
     exodus
   ];
 }
