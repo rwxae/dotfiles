@@ -5,7 +5,6 @@
     # GUI
     qbittorrent
     hoppscotch
-    discord
     slack
 
     # CLI
@@ -39,15 +38,18 @@
     # LSP
     astro-language-server
     bash-language-server
+    codebook
     docker-compose-language-service
     dockerfile-language-server
-    # superhtml
-    typescript-language-server
+    emmet-language-server
     inputs.nixpkgsForVscode.legacyPackages.${pkgs.stdenv.system}.vscode-langservers-extracted
     marksman
     nil
     prisma-language-server
+    tailwindcss-language-server
     taplo
+    typescript-language-server
+    vue-language-server
     yaml-language-server
   ];
 }

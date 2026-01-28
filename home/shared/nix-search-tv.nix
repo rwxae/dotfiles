@@ -13,13 +13,10 @@ let
   # noctaliaHomeOptions = mkOptions [
   #   inputs.noctalia.homeModules.default
   # ];
-  # solaarOptions = mkOptions [
-  #   inputs.solaar.nixosModules.default
-  # ];
   ns-script =
     {
       url = "https://raw.githubusercontent.com/3timeslazy/nix-search-tv/refs/heads/main/nixpkgs.sh";
-      hash = "sha256-XkBL7EdPIETdi8B5k0ww3d66xB7QnW+mFEK2RUihWcY=";
+      hash = "sha256-+E1vHvWZzYqhlDB1e646kVVopmlMmOX/OFvcCOAHLow=";
     }
     |> pkgs.fetchurl
     |> builtins.readFile

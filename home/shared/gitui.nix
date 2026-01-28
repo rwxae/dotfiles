@@ -1,10 +1,10 @@
-{ pkgs, ... }:
+{ ... }:
 
 {
   programs.gitui = {
-    # TODO: https://github.com/NixOS/nixpkgs/issues/450861
-    enable = pkgs.stdenv.isLinux;
+    enable = true;
     # See https://github.com/gitui-org/gitui/blob/master/vim_style_key_config.ron
+    # TODO: fetch file from git once the fix is merged.
     keyConfig = ''
       (
         open_help: Some(( code: F(1), modifiers: "")),
@@ -25,7 +25,7 @@
 
         edit_file: Some(( code: Char('I'), modifiers: "SHIFT")),
 
-        status_reset_item: Some(( code: Char('U'), modifiers: "SHIFT")),
+        status_reset_item: Some(( code: Char('u'), modifiers: "")),
 
         diff_reset_lines: Some(( code: Char('u'), modifiers: "")),
         diff_stage_lines: Some(( code: Char('s'), modifiers: "")),

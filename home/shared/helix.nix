@@ -5,7 +5,10 @@
     enable = true;
     defaultEditor = true;
     settings = {
-      editor.cursor-shape.insert = "bar";
+      editor = {
+        cursor-shape.insert = "bar";
+        default-yank-register = "+";
+      };
       keys = {
         normal = {
           space = {
@@ -33,6 +36,16 @@
           command = lib.getExe pkgs.codebook;
           args = [ "serve" ];
         };
+        # TODO: Can't compile
+        # ai = {
+        #   command = lib.getExe pkgs.lsp-ai;
+        #   config = {
+        #     models.model1 = {
+        #       type = "ollama";
+        #       model = "gpt-oss:20b";
+        #     };
+        #   };
+        # };
         tailwindcss = {
           command = lib.getExe pkgs.tailwindcss-language-server;
           args = [ "--stdio" ];
@@ -57,38 +70,48 @@
               parser
             ];
           };
+          # TODO: ESLint should be implemented as LSP with format feature enabled
+          eslintFormatter = {
+            command =
+              {
+                name = "eslint-fix";
+                runtimeInputs = with pkgs; [
+                  eslint_d
+                ];
+                text = ''
+                  eslint_d --fix-to-stdout --stdin --stdin-filename "$(pwd)"/"$(basename "$1")"
+                '';
+              }
+              |> pkgs.writeShellApplication
+              |> lib.getExe;
+            args = [
+              "%{buffer_name}"
+            ];
+          };
           typescript = {
             name = "typescript-language-server";
             except-features = [ "format" ];
           };
-          # TODO: Add support for ESLint. Server does not work at the moment
-          # ESLint should be implemented as LSP with format feature enabled
-          # eslintFormatter = {
-          #   command = "npx";
-          #   args = [
-          #     "eslint"
-          #     "--stdin"
-          #     "--fix-to-stdout"
-          #     "--stdin-filename %{buffer_name}"
-          #     "--flag v10_config_lookup_from_file"
-          #   ];
-          # };
+          commonLSPs = [
+            "codebook"
+            # "ai"
+          ];
         in
         [
           {
             name = "git-commit";
             language-servers = [
               "commit-lsp"
-              "codebook"
-            ];
+            ]
+            ++ commonLSPs;
           }
           {
             name = "markdown";
             language-servers = [
               "marksman"
               "tailwindcss"
-              "codebook"
-            ];
+            ]
+            ++ commonLSPs;
             formatter = mkPrettierFormatter "mdx";
             auto-format = true;
           }
@@ -96,8 +119,8 @@
             name = "nix";
             language-servers = [
               "nil"
-              "codebook"
-            ];
+            ]
+            ++ commonLSPs;
             auto-format = true;
           }
           {
@@ -106,8 +129,8 @@
               "vscode-html-language-server"
               "tailwindcss"
               "emmet"
-              "codebook"
-            ];
+            ]
+            ++ commonLSPs;
             formatter = mkPrettierFormatter "html";
           }
           {
@@ -115,8 +138,8 @@
             language-servers = [
               "vscode-css-language-server"
               "tailwindcss"
-              "codebook"
-            ];
+            ]
+            ++ commonLSPs;
             formatter = mkPrettierFormatter "css";
           }
           {
@@ -124,8 +147,8 @@
             language-servers = [
               "vscode-css-language-server"
               "tailwindcss"
-              "codebook"
-            ];
+            ]
+            ++ commonLSPs;
             formatter = mkPrettierFormatter "scss";
           }
           {
@@ -134,9 +157,9 @@
               typescript
               "vscode-eslint-language-server"
               "tailwindcss"
-              "codebook"
-            ];
-            # formatter = eslintFormatter;
+            ]
+            ++ commonLSPs;
+            formatter = eslintFormatter;
             auto-format = true;
           }
           {
@@ -145,9 +168,9 @@
               typescript
               "vscode-eslint-language-server"
               "tailwindcss"
-              "codebook"
-            ];
-            # formatter = eslintFormatter;
+            ]
+            ++ commonLSPs;
+            formatter = eslintFormatter;
             auto-format = true;
           }
           {
@@ -156,9 +179,9 @@
               typescript
               "vscode-eslint-language-server"
               "tailwindcss"
-              "codebook"
-            ];
-            # formatter = eslintFormatter;
+            ]
+            ++ commonLSPs;
+            formatter = eslintFormatter;
             auto-format = true;
           }
           {
@@ -167,17 +190,17 @@
               typescript
               "vscode-eslint-language-server"
               "tailwindcss"
-              "codebook"
-            ];
-            # formatter = eslintFormatter;
+            ]
+            ++ commonLSPs;
+            formatter = eslintFormatter;
             auto-format = true;
           }
           {
             name = "rust";
             language-servers = [
               "rust-analyzer"
-              "codebook"
-            ];
+            ]
+            ++ commonLSPs;
           }
         ];
     };

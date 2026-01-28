@@ -2,7 +2,6 @@
 
 {
   imports = [
-    ./adb.nix
     ./amnezia-vpn.nix
     ./bash.nix
     ./gamemode.nix
