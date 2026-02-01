@@ -34,7 +34,7 @@
         zhm_move_next_word_end
       )
 
-      bindkey '^X' autosuggest-accept
+      bindkey '^F' autosuggest-accept
     '';
   };
 }
