@@ -28,9 +28,6 @@
           border = 0;
           criteria = [
             {
-              class = "^AmneziaVPN$";
-            }
-            {
               class = "^pwvucontrol$";
             }
           ];
@@ -270,10 +267,6 @@
           "b" = [ { class = "^Zathura$"; } ];
         };
         startup = [
-          {
-            command = "AmneziaVPN";
-            notification = false;
-          }
           {
             command = "zeditor";
             notification = false;

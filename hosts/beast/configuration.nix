@@ -36,16 +36,21 @@
 
   networking.hostName = "beast";
 
-  services.zapret = {
+  networking.proxy =
+    let
+      socks = "socks5://127.0.0.1:10800";
+      http = "http://127.0.0.1:10801";
+    in
+    {
+      default = http;
+      httpProxy = http;
+      httpsProxy = http;
+      allProxy = socks;
+    };
+
+  services.xray = {
     enable = true;
-    params = [
-      "--dpi-desync=fake,fakedsplit"
-      "--dpi-desync-fooling=badseq"
-      "--dpi-desync-split-pos=1"
-      "--dpi-desync-fake-tls=0x00000000"
-      "--dpi-desync-fake-tls=!"
-      "--dpi-desync-fake-tls-mod=rnd,rndsni,dupsid"
-    ];
+    settingsFile = "/etc/xray/config.json";
   };
 
   home-manager.users.rwxae = ./home.nix;

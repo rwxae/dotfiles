@@ -4,7 +4,6 @@
   imports = [
     ./aichat.nix
     ./asciinema.nix
-    ./bash.nix
     ./bat.nix
     ./btop.nix
     ./direnv.nix
@@ -33,6 +32,7 @@
     ./zed-editor.nix
     ./zen-browser.nix
     ./zoxide.nix
+    ./zsh.nix
   ];
 
   home.stateVersion = "25.05";

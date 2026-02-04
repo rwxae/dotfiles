@@ -38,9 +38,6 @@
           border = 0;
           criteria = [
             {
-              title = "AmneziaVPN";
-            }
-            {
               app_id = "com.saivert.pwvucontrol";
             }
             {
@@ -285,9 +282,6 @@
           "b" = [ { app_id = "org.pwmt.zathura"; } ];
         };
         startup = [
-          {
-            command = "AmneziaVPN";
-          }
           {
             command = "zeditor";
           }
