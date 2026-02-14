@@ -19,8 +19,7 @@
         mod = "SUPER";
         primaryMonitor = config.mySystem.monitors.primary;
         secondaryMonitor = config.mySystem.monitors.secondary;
-        numbers = lib.stringToCharacters "123456789";
-        letters = lib.stringToCharacters "abcdefgimnopqrstuvwxyz";
+        workspaces = lib.stringToCharacters "123456789abcdefgimnopqrstuvwxyz";
         launchApp = app: "uwsm app -- ${app}";
       in
       {
@@ -49,6 +48,10 @@
 
         animations.enabled = false;
 
+        misc = {
+          focus_on_activate = true;
+        };
+
         layerrule = [
           "blur on, ignore_alpha 0, match:namespace vicinae"
         ];
@@ -66,9 +69,8 @@
         ];
 
         workspace = lib.flatten [
-          (numbers |> map (w: "${w}, monitor:${primaryMonitor}"))
           "name:f, monitor:${secondaryMonitor}"
-          (letters |> builtins.filter (w: w != "f") |> map (w: "name:${w}, monitor:${primaryMonitor}"))
+          (workspaces |> builtins.filter (w: w != "f") |> map (w: "name:${w}, monitor:${primaryMonitor}"))
         ];
 
         bind = lib.flatten [
@@ -99,11 +101,8 @@
           "${mod}+control+shift, r, exec, ${launchApp "hyprshot -m region --freeze"}"
           "${mod}+control+shift, s, exec, ${launchApp "hyprshot -m output"}"
 
-          (numbers |> map (w: "${mod}, ${w}, workspace, ${w}"))
-          (letters |> map (w: "${mod}, ${w}, workspace, name:${w}"))
-
-          (numbers |> map (w: "${mod}+shift, ${w}, movetoworkspace, ${w}"))
-          (letters |> map (w: "${mod}+shift, ${w}, movetoworkspace, name:${w}"))
+          (workspaces |> map (w: "${mod}, ${w}, workspace, name:${w}"))
+          (workspaces |> map (w: "${mod}+shift, ${w}, movetoworkspace, name:${w}"))
         ];
 
         bindm = [
