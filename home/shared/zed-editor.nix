@@ -169,8 +169,8 @@
           };
         };
         colorize_brackets = true;
-        features = {
-          edit_prediction_provider = "none";
+        edit_predictions = {
+          provider = "none";
         };
         telemetry = {
           diagnostics = false;
