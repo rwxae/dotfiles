@@ -7,7 +7,6 @@
 
   programs.noctalia-shell = {
     enable = true;
-    systemd.enable = true;
     settings =
       let
         monitors = [ config.mySystem.monitors.secondary ];

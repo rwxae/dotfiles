@@ -108,6 +108,7 @@
         ];
 
         exec-once = [
+          (launchApp "noctalia-shell")
           (launchApp "thunderbird")
           (launchApp "anytype")
           (launchApp "slack")
