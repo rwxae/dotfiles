@@ -8,13 +8,13 @@
     ./easyeffects.nix
     ./gtk.nix
     ./hyprland.nix
-    ./hyprshot.nix
     ./mpv.nix
     ./mpvpaper.nix
     ./noctalia.nix
     ./obs.nix
     ./packages.nix
     ./vicinae.nix
+    ./xdg.nix
     ./zathura.nix
   ];
 }

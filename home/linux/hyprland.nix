@@ -93,10 +93,7 @@
           "${mod}+control, l, movecurrentworkspacetomonitor, r"
           "${mod}+control, q, killactive"
 
-          "${mod}+control, r, exec, ${launchApp "hyprshot -m region --freeze --clipboard-only"}"
-          "${mod}+control, s, exec, ${launchApp "hyprshot -m output --clipboard-only"}"
-          "${mod}+control+shift, r, exec, ${launchApp "hyprshot -m region --freeze"}"
-          "${mod}+control+shift, s, exec, ${launchApp "hyprshot -m output"}"
+          "${mod}+control, s, exec, ${launchApp "${lib.getExe pkgs.grimblast} --freeze copysave area"}"
 
           (workspaces |> map (w: "${mod}, ${w}, workspace, name:${w}"))
           (workspaces |> map (w: "${mod}+shift, ${w}, movetoworkspace, name:${w}"))
