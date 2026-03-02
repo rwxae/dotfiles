@@ -9,8 +9,7 @@
     keycastr
     discord
 
-    # Development Tools
-    colima # TODO: replace on container - https://github.com/apple/container/issues/66
+    colima
     docker
   ];
 }

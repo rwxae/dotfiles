@@ -36,16 +36,6 @@
           command = lib.getExe pkgs.codebook;
           args = [ "serve" ];
         };
-        # TODO: Can't compile
-        # ai = {
-        #   command = lib.getExe pkgs.lsp-ai;
-        #   config = {
-        #     models.model1 = {
-        #       type = "ollama";
-        #       model = "gpt-oss:20b";
-        #     };
-        #   };
-        # };
         tailwindcss = {
           command = lib.getExe pkgs.tailwindcss-language-server;
           args = [ "--stdio" ];
@@ -94,7 +84,6 @@
           };
           commonLSPs = [
             "codebook"
-            # "ai"
           ];
         in
         [

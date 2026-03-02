@@ -4,7 +4,6 @@
   programs.gitui = {
     enable = true;
     # See https://github.com/gitui-org/gitui/blob/master/vim_style_key_config.ron
-    # TODO: fetch file from git once the fix is merged.
     keyConfig = ''
       (
         open_help: Some(( code: F(1), modifiers: "")),
