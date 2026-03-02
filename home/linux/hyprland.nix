@@ -120,6 +120,15 @@
       };
   };
 
+  services.hypridle = {
+    enable = true;
+    settings = {
+      general = {
+        lock_cmd = "noctalia-shell ipc call lockScreen lock";
+      };
+    };
+  };
+
   # TODO: https://github.com/nix-community/stylix/issues/478
   home.pointerCursor.hyprcursor.enable = true;
 }
