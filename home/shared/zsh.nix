@@ -1,10 +1,16 @@
-{ inputs, pkgs, ... }:
+{
+  lib,
+  inputs,
+  pkgs,
+  ...
+}:
 
 {
   programs.zsh = {
     enable = true;
     autosuggestion.enable = true;
     enableCompletion = true;
+    syntaxHighlighting.enable = true;
     plugins = [
       {
         name = "zsh-helix-mode";
@@ -12,29 +18,42 @@
         file = "share/zsh-helix-mode/zsh-helix-mode.plugin.zsh";
       }
       {
-        name = "fast-syntax-highlighting";
-        src = "${pkgs.zsh-fast-syntax-highlighting}/share/zsh/plugins/fast-syntax-highlighting";
-        file = "fast-syntax-highlighting.plugin.zsh";
+        name = "fzf-tab";
+        src = pkgs.zsh-fzf-tab;
+        file = "share/fzf-tab/fzf-tab.plugin.zsh";
       }
     ];
-    initContent = ''
-      ZSH_AUTOSUGGEST_CLEAR_WIDGETS+=(
-        zhm_history_prev
-        zhm_history_next
-        zhm_prompt_accept
-        zhm_accept
-        zhm_accept_or_insert_newline
-      )
-      ZSH_AUTOSUGGEST_ACCEPT_WIDGETS+=(
-        zhm_move_right
-        zhm_clear_selection_move_right
-      )
-      ZSH_AUTOSUGGEST_PARTIAL_ACCEPT_WIDGETS+=(
-        zhm_move_next_word_start
-        zhm_move_next_word_end
-      )
+    history = {
+      findNoDups = true;
+      saveNoDups = true;
+      ignoreAllDups = true;
+    };
+    initContent = lib.mkMerge [
+      ''
+        ZSH_AUTOSUGGEST_CLEAR_WIDGETS+=(
+          zhm_history_prev
+          zhm_history_next
+          zhm_prompt_accept
+          zhm_accept
+          zhm_accept_or_insert_newline
+        )
+        ZSH_AUTOSUGGEST_ACCEPT_WIDGETS+=(
+          zhm_move_right
+          zhm_clear_selection_move_right
+        )
+        ZSH_AUTOSUGGEST_PARTIAL_ACCEPT_WIDGETS+=(
+          zhm_move_next_word_start
+          zhm_move_next_word_end
+        )
 
-      bindkey '^F' autosuggest-accept
-    '';
+        zhm_wrap_widget fzf-tab-complete zhm_fzf_tab_complete
+        bindkey '^I' zhm_fzf_tab_complete
+
+        bindkey '^F' autosuggest-accept
+        bindkey '^P' history-search-backward
+        bindkey '^N' history-search-forward
+      ''
+      (lib.mkOrder 1250 "zhm-add-update-region-highlight-hook")
+    ];
   };
 }
