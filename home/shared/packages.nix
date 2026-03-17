@@ -32,9 +32,6 @@
     gopass
     gopass-jsonapi
 
-    # Development Tools
-    devenv
-
     # LSP
     astro-language-server
     bash-language-server
@@ -46,6 +43,7 @@
     marksman
     nil
     prisma-language-server
+    rust-analyzer
     tailwindcss-language-server
     taplo
     typescript-language-server
