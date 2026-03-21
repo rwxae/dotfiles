@@ -10,17 +10,22 @@
     enable = true;
     autosuggestion.enable = true;
     enableCompletion = true;
-    syntaxHighlighting.enable = true;
     plugins = [
       {
         name = "zsh-helix-mode";
-        src = inputs.zsh-helix-mode.packages.${pkgs.stdenv.system}.zsh-helix-mode;
-        file = "share/zsh-helix-mode/zsh-helix-mode.plugin.zsh";
+        src = "${inputs.zsh-helix-mode.packages.${pkgs.stdenv.system}.zsh-helix-mode}/share/zsh-helix-mode";
       }
       {
         name = "fzf-tab";
-        src = pkgs.zsh-fzf-tab;
-        file = "share/fzf-tab/fzf-tab.plugin.zsh";
+        src = "${pkgs.zsh-fzf-tab}/share/fzf-tab";
+      }
+      {
+        name = "fast-syntax-highlighting";
+        src = "${pkgs.zsh-fast-syntax-highlighting}/share/zsh/plugins/fast-syntax-highlighting";
+      }
+      {
+        name = "zsh-history-substring-search";
+        src = "${pkgs.zsh-history-substring-search}/share/zsh-history-substring-search";
       }
     ];
     history = {
@@ -50,10 +55,12 @@
         bindkey '^I' zhm_fzf_tab_complete
 
         bindkey '^F' autosuggest-accept
-        bindkey '^P' history-search-backward
-        bindkey '^N' history-search-forward
+
+        bindkey -M hxnor '^P' history-substring-search-up
+        bindkey -M hxnor '^N' history-substring-search-down
+        bindkey -M hxins '^P' history-substring-search-up
+        bindkey -M hxins '^N' history-substring-search-down
       ''
-      (lib.mkOrder 1250 "zhm-add-update-region-highlight-hook")
     ];
   };
 }
