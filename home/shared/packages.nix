@@ -22,6 +22,7 @@
     ffmpeg
     nvd
     git-open
+    spek
 
     # Archiving and compression
     zip
