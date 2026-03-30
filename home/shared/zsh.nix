@@ -56,10 +56,10 @@
 
         bindkey '^F' autosuggest-accept
 
-        bindkey -M hxnor '^P' history-substring-search-up
-        bindkey -M hxnor '^N' history-substring-search-down
-        bindkey -M hxins '^P' history-substring-search-up
-        bindkey -M hxins '^N' history-substring-search-down
+        bindkey -M hxnor "$terminfo[kcuu1]" history-substring-search-up
+        bindkey -M hxnor "$terminfo[kcud1]" history-substring-search-down
+        bindkey -M hxins "$terminfo[kcuu1]" history-substring-search-up
+        bindkey -M hxins "$terminfo[kcud1]" history-substring-search-down
       ''
     ];
   };
