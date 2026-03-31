@@ -33,34 +33,32 @@
       saveNoDups = true;
       ignoreAllDups = true;
     };
-    initContent = lib.mkMerge [
-      ''
-        ZSH_AUTOSUGGEST_CLEAR_WIDGETS+=(
-          zhm_history_prev
-          zhm_history_next
-          zhm_prompt_accept
-          zhm_accept
-          zhm_accept_or_insert_newline
-        )
-        ZSH_AUTOSUGGEST_ACCEPT_WIDGETS+=(
-          zhm_move_right
-          zhm_clear_selection_move_right
-        )
-        ZSH_AUTOSUGGEST_PARTIAL_ACCEPT_WIDGETS+=(
-          zhm_move_next_word_start
-          zhm_move_next_word_end
-        )
+    initContent = ''
+      ZSH_AUTOSUGGEST_CLEAR_WIDGETS+=(
+        zhm_history_prev
+        zhm_history_next
+        zhm_prompt_accept
+        zhm_accept
+        zhm_accept_or_insert_newline
+      )
+      ZSH_AUTOSUGGEST_ACCEPT_WIDGETS+=(
+        zhm_move_right
+        zhm_clear_selection_move_right
+      )
+      ZSH_AUTOSUGGEST_PARTIAL_ACCEPT_WIDGETS+=(
+        zhm_move_next_word_start
+        zhm_move_next_word_end
+      )
 
-        zhm_wrap_widget fzf-tab-complete zhm_fzf_tab_complete
-        bindkey '^I' zhm_fzf_tab_complete
+      zhm_wrap_widget fzf-tab-complete zhm_fzf_tab_complete
+      bindkey '^I' zhm_fzf_tab_complete
 
-        bindkey '^F' autosuggest-accept
+      bindkey '^F' autosuggest-accept
 
-        bindkey -M hxnor "$terminfo[kcuu1]" history-substring-search-up
-        bindkey -M hxnor "$terminfo[kcud1]" history-substring-search-down
-        bindkey -M hxins "$terminfo[kcuu1]" history-substring-search-up
-        bindkey -M hxins "$terminfo[kcud1]" history-substring-search-down
-      ''
-    ];
+      bindkey -M hxnor "$terminfo[kcuu1]" history-substring-search-up
+      bindkey -M hxnor "$terminfo[kcud1]" history-substring-search-down
+      bindkey -M hxins "$terminfo[kcuu1]" history-substring-search-up
+      bindkey -M hxins "$terminfo[kcud1]" history-substring-search-down
+    '';
   };
 }
