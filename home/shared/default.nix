@@ -25,10 +25,10 @@
     ./ripgrep.nix
     ./television.nix
     ./thunderbird.nix
-    ./tmux.nix
     ./yazi.nix
     ./yt-dlp.nix
     ./zed-editor.nix
+    ./zellij.nix
     ./zen-browser.nix
     ./zoxide.nix
     ./zsh.nix
