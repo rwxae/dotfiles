@@ -10,7 +10,6 @@
     piper
     nemo
     krita
-    yandex-music
     nicotine-plus
     hyprpicker
     (discord.override { withVencord = true; })
