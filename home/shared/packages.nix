@@ -44,7 +44,6 @@
     marksman
     nil
     prisma-language-server
-    rust-analyzer
     tailwindcss-language-server
     taplo
     typescript-language-server

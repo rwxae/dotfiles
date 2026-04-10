@@ -44,6 +44,9 @@
           command = lib.getExe pkgs.emmet-language-server;
           args = [ "--stdio" ];
         };
+        rust-analyzer = {
+          config.check.command = "clippy";
+        };
         # TODO: it doesn't work
         # vscode-eslint-language-server = {
         #   config.codeActionsOnSave = {
