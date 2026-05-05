@@ -23,6 +23,7 @@
     nvd
     git-open
     spek
+    pi-coding-agent
 
     # Archiving and compression
     zip

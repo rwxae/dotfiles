@@ -20,7 +20,6 @@
     ./lazydocker.nix
     ./nix-search-tv.nix
     ./oh-my-posh.nix
-    ./opencode.nix
     ./packages.nix
     ./ripgrep.nix
     ./television.nix
