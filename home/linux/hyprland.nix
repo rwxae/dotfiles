@@ -31,8 +31,8 @@
         };
 
         monitor = [
-          "${primaryMonitor}, 1920x1080@144, 1080x0, 1"
-          "${secondaryMonitor}, 1920x1080@60, 0x0, 1, transform, 1"
+          "${primaryMonitor}, 1920x1080@144, 0x0, 1"
+          "${secondaryMonitor}, 1920x1080@60, 1920x0, 1, transform, 3"
         ];
 
         general = {
