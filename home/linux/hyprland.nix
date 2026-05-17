@@ -11,9 +11,6 @@
     systemd.enable = false;
     package = null;
     portalPackage = null;
-    plugins = with pkgs.hyprlandPlugins; [
-      hypr-dynamic-cursors
-    ];
     settings =
       let
         mod = "SUPER";
@@ -113,10 +110,6 @@
           (launchApp "zen-beta")
           (launchApp "kitty")
         ];
-
-        "plugin:dynamic-cursors" = {
-          shake.enabled = false;
-        };
       };
   };
 
