@@ -57,7 +57,7 @@
           "float on, match:class com.saivert.pwvucontrol"
           "float on, match:class nemo"
           "workspace name:r silent, match:class thunderbird"
-          "workspace name:a silent, match:class anytype"
+          "workspace name:a silent, match:title Anytype"
           "workspace name:s silent, match:class Slack"
           "workspace name:d silent, match:class discord"
           "workspace name:f silent, match:class zen-beta"
