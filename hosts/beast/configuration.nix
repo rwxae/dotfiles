@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
   imports = [
@@ -31,6 +31,11 @@
     enable = true;
     startupProfile = "off";
   };
+
+  environment.systemPackages = with pkgs; [
+    headsetcontrol
+  ];
+  services.udev.packages = with pkgs; [ headsetcontrol ];
 
   services.xserver.videoDrivers = [ "nvidia" ];
 
