@@ -11,6 +11,7 @@
     systemd.enable = false;
     package = null;
     portalPackage = null;
+    plugins = with pkgs.hyprlandPlugins; [ csgo-vulkan-fix ];
     settings =
       let
         mod = "SUPER";
@@ -110,6 +111,13 @@
           (launchApp "zen-beta")
           (launchApp "kitty")
         ];
+
+        plugin = {
+          csgo_vulkan_fix = {
+            fix_mouse = true;
+            vkfix-app = [ "cs2, 1440, 1080" ];
+          };
+        };
       };
   };
 
