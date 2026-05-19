@@ -27,6 +27,11 @@
     };
   };
 
+  services.hardware.openrgb = {
+    enable = true;
+    startupProfile = "off";
+  };
+
   services.xserver.videoDrivers = [ "nvidia" ];
 
   environment.variables = {
