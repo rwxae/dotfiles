@@ -6,7 +6,6 @@
     ./options.nix
     ./chromium.nix
     ./easyeffects.nix
-    ./gtk.nix
     ./hyprland.nix
     ./mpv.nix
     ./mpvpaper.nix

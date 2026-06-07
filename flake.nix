@@ -6,8 +6,6 @@
     nixpkgsForVscode.url = "github:NixOS/nixpkgs/e89cf1c932006531f454de7d652163a9a5c86668";
     nix-darwin.url = "github:nix-darwin/nix-darwin";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
-    nur.url = "github:nix-community/NUR";
-    nur.inputs.nixpkgs.follows = "nixpkgs";
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     zsh-helix-mode.url = "github:multirious/zsh-helix-mode/main";
@@ -24,7 +22,6 @@
     inputs@{
       nixpkgs,
       home-manager,
-      nur,
       nix-darwin,
       stylix,
       ...
@@ -33,7 +30,6 @@
       nixosConfigurations =
         let
           nixosModules = [
-            nur.modules.nixos.default
             home-manager.nixosModules.home-manager
             stylix.nixosModules.stylix
           ];
@@ -53,7 +49,6 @@
         mac = nix-darwin.lib.darwinSystem {
           specialArgs = { inherit inputs; };
           modules = [
-            nur.modules.darwin.default
             home-manager.darwinModules.home-manager
             stylix.darwinModules.stylix
             ./hosts/mac/configuration.nix
