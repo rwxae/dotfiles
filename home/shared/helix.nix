@@ -15,18 +15,6 @@
             o = ":reset-diff-change";
             i = ":sh git show --no-patch --format='%%h (%%an: %%ar): %%s' $(git blame -p %{buffer_name} -L%{cursor_line},+1 | head -1 | cut -d' ' -f1)";
           };
-          C-e = [
-            ":sh rm -f /tmp/unique-file-h21a434"
-            ":insert-output yazi '%{buffer_name}' --chooser-file=/tmp/unique-file-h21a434"
-            ":insert-output echo \"x1b[?1049h\" > /dev/tty"
-            ":open %sh{cat /tmp/unique-file-h21a434}"
-            ":redraw"
-          ];
-          C-g = [
-            ":insert-output gitui >/dev/tty"
-            ":redraw"
-            ":reload-all"
-          ];
         };
       };
     };
