@@ -47,6 +47,10 @@
         rust-analyzer = {
           config.check.command = "clippy";
         };
+        # TODO: https://github.com/helix-editor/helix/pull/15853
+        nginx-language-server = {
+          command = lib.getExe pkgs.nginx-language-server;
+        };
         # TODO: it doesn't work
         # vscode-eslint-language-server = {
         #   config.codeActionsOnSave = {
@@ -85,6 +89,7 @@
             name = "typescript-language-server";
             except-features = [ "format" ];
           };
+          # TODO: https://github.com/helix-editor/helix/pull/14804
           commonLSPs = [
             "codebook"
           ];
@@ -191,6 +196,13 @@
             name = "rust";
             language-servers = [
               "rust-analyzer"
+            ]
+            ++ commonLSPs;
+          }
+          {
+            name = "nginx";
+            language-servers = [
+              "nginx-language-server"
             ]
             ++ commonLSPs;
           }
