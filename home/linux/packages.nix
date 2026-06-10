@@ -11,7 +11,6 @@
     nemo
     krita
     nicotine-plus
-    hyprpicker
     (discord.override { withVencord = true; })
     r2modman
 

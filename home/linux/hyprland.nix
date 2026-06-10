@@ -186,6 +186,7 @@
           (bind "${mod} + CONTROL + q" (dsp.window.kill) { })
 
           (bind "${mod} + CONTROL + s" (dsp.exec_cmd "${lib.getExe pkgs.grimblast} copysave area") { })
+          (bind "${mod} + CONTROL + c" (dsp.exec_cmd "${lib.getExe pkgs.hyprpicker} --autocopy") { })
 
           (bind "${mod} + CONTROL + m" (dsp.dpms config.mySystem.monitors.secondary) { })
 
