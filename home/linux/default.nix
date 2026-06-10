@@ -3,14 +3,12 @@
 {
   imports = [
     ../shared
-    ./options.nix
     ./chromium.nix
-    ./easyeffects.nix
     ./hyprland.nix
     ./mpv.nix
-    ./mpvpaper.nix
     ./noctalia.nix
     ./obs.nix
+    ./options.nix
     ./packages.nix
     ./vicinae.nix
     ./xdg.nix

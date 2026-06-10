@@ -1,7 +1,0 @@
-{ ... }:
-
-{
-  programs.mpvpaper = {
-    enable = true;
-  };
-}
