@@ -28,6 +28,15 @@
         dsp = {
           exec_cmd = app: mkLuaInline ''hl.dsp.exec_cmd("${app}")'';
           focus = arg: mkLuaInline "hl.dsp.focus(${toLua { } arg})";
+          dpms =
+            arg:
+            mkLuaInline ''
+              function()
+                hl.timer(function()
+                  hl.dispatch(hl.dsp.dpms({ monitor = "${arg}" }))
+                end, { timeout = 500, type = "oneshot" })
+              end
+            '';
           window = {
             move = arg: mkLuaInline "hl.dsp.window.move(${toLua { } arg})";
             drag = mkLuaInline "hl.dsp.window.drag()";
@@ -180,6 +189,8 @@
             (dsp.exec_cmd "uwsm app -- ${lib.getExe pkgs.grimblast} --freeze copysave area")
             { }
           )
+
+          (bind "${mod} + CONTROL + m" (dsp.dpms config.mySystem.monitors.secondary) { })
 
           (map (w: bind "${mod} + ${w}" (dsp.focus { workspace = "name:${w}"; }) { }) workspaces)
           (map (
