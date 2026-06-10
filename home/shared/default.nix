@@ -18,6 +18,7 @@
     ./helix.nix
     ./kitty.nix
     ./lazydocker.nix
+    ./mergiraf.nix
     ./nix-search-tv.nix
     ./oh-my-posh.nix
     ./packages.nix
