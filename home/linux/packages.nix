@@ -7,7 +7,6 @@
     prismlauncher
     heroic
     vial
-    piper
     nemo
     krita
     nicotine-plus
