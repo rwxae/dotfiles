@@ -9,7 +9,7 @@
     enable = true;
     settings =
       let
-        monitors = [ config.mySystem.monitors.secondary ];
+        monitors = [ config.mySystem.monitors.primary ];
       in
       {
         bar = {
@@ -70,7 +70,7 @@
           dimmerOpacity = 0;
         };
         ui = {
-          tooltipsEnabled = false;
+          boxBorderEnabled = true;
         };
         dock.enabled = false;
         notifications = {
