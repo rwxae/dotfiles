@@ -30,8 +30,8 @@
   };
 
   stylix.cursor = {
-    package = pkgs.rose-pine-cursor;
-    name = "BreezeX-RosePine-Linux";
+    package = pkgs.rose-pine-hyprcursor;
+    name = "rose-pine-hyprcursor";
     size = 32;
   };
 
