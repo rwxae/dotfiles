@@ -15,7 +15,6 @@
 
     # CLI
     android-tools
-    tesseract
     playerctl
     wl-clipboard
 

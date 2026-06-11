@@ -26,7 +26,7 @@
             options
           ];
         dsp = {
-          exec_cmd = app: mkLuaInline ''hl.dsp.exec_cmd("${app}")'';
+          exec_cmd = app: mkLuaInline "hl.dsp.exec_cmd(${toLua { } app})";
           focus = arg: mkLuaInline "hl.dsp.focus(${toLua { } arg})";
           dpms =
             arg:
@@ -187,6 +187,11 @@
 
           (bind "${mod} + CONTROL + s" (dsp.exec_cmd "${lib.getExe pkgs.grimblast} copysave area") { })
           (bind "${mod} + CONTROL + c" (dsp.exec_cmd "${lib.getExe pkgs.hyprpicker} --autocopy") { })
+          (bind "${mod} + CONTROL + e" (dsp.exec_cmd ''
+            ${lib.getExe pkgs.grim} -g "$(${lib.getExe pkgs.slurp})" - |
+            ${lib.getExe pkgs.tesseract} - stdout |
+            ${lib.getExe' pkgs.wl-clipboard "wl-copy"}
+          '') { })
 
           (bind "${mod} + CONTROL + m" (dsp.dpms config.mySystem.monitors.secondary) { })
 
