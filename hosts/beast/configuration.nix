@@ -6,8 +6,6 @@
     ./hardware-configuration.nix
   ];
 
-  system.stateVersion = "25.05";
-
   nixpkgs.config.cudaSupport = true;
 
   boot.loader.systemd-boot.enable = true;

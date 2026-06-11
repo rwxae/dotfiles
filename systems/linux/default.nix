@@ -7,6 +7,8 @@
     ./services
   ];
 
+  system.stateVersion = "25.05";
+
   networking = {
     networkmanager.enable = true;
     firewall.checkReversePath = "loose";
