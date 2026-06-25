@@ -1,12 +1,17 @@
-{ inputs, config, ... }:
+{
+  inputs,
+  config,
+  ...
+}:
 
 {
   imports = [
     inputs.noctalia.homeModules.default
   ];
 
-  programs.noctalia-shell = {
+  programs.noctalia = {
     enable = true;
+    systemd.enable = true;
     settings =
       let
         monitors = [ config.mySystem.monitors.primary ];

@@ -214,7 +214,6 @@
           "hyprland.start"
           (mkLuaInline ''
             function()
-              hl.exec_cmd("uwsm app -- noctalia-shell") 
               hl.exec_cmd("uwsm app -- thunderbird") 
               hl.exec_cmd("uwsm app -- anytype") 
               hl.exec_cmd("uwsm app -- slack") 
