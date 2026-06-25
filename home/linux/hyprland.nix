@@ -54,12 +54,16 @@
       {
         config = {
           general = {
+            layout = "scrolling";
             gaps_in = 0;
             gaps_out = 0;
             border_size = 0;
             allow_tearing = true;
           };
 
+          scrolling = {
+            column_width = 0.9;
+          };
           input = {
             kb_layout = "us,ru";
             kb_options = "grp:caps_toggle";
