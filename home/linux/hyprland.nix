@@ -64,6 +64,7 @@
           scrolling = {
             column_width = 0.9;
           };
+
           input = {
             kb_layout = "us,ru";
             kb_options = "grp:caps_toggle";
@@ -97,6 +98,7 @@
             position = "1920x0";
             scale = 1;
             transform = 3;
+            disabled = true;
           }
         ];
 
