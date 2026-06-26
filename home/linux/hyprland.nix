@@ -191,7 +191,7 @@
           (bind "${mod} + CONTROL + w" (dsp.window.close) { })
           (bind "${mod} + CONTROL + q" (dsp.window.kill) { })
 
-          (bind "${mod} + CONTROL + s" (dsp.exec_cmd "${lib.getExe pkgs.grimblast} copysave area") { })
+          (bind "${mod} + CONTROL + s" (dsp.exec_cmd "noctalia msg screenshot-region") { })
           (bind "${mod} + CONTROL + c" (dsp.exec_cmd "${lib.getExe pkgs.hyprpicker} --autocopy") { })
           (bind "${mod} + CONTROL + e" (dsp.exec_cmd ''
             ${lib.getExe pkgs.grim} -g "$(${lib.getExe pkgs.slurp})" - |
@@ -232,7 +232,7 @@
     enable = true;
     settings = {
       general = {
-        lock_cmd = "noctalia-shell ipc call lockScreen lock";
+        lock_cmd = "noctalia msg session lock";
       };
     };
   };
