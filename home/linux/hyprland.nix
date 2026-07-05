@@ -112,10 +112,6 @@
 
         window_rule = [
           {
-            match.class = "com.saivert.pwvucontrol";
-            float = true;
-          }
-          {
             match.class = "nemo";
             float = true;
           }
@@ -128,7 +124,7 @@
             workspace = "name:p";
           }
           {
-            match.title = "Anytype";
+            match.class = "anytype";
             workspace = "name:a";
           }
           {
