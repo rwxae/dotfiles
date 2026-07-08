@@ -107,6 +107,14 @@
             match.namespace = "vicinae";
             blur = true;
             ignore_alpha = 0;
+            no_anim = true;
+          }
+          {
+            match.namespace = "^noctalia-(bar-.+|notification|dock|panel|attached-panel|osd)$";
+            blur = true;
+            blur_popups = true;
+            ignore_alpha = 0.5;
+            no_anim = true;
           }
         ];
 
