@@ -60,10 +60,6 @@
             run = "move-node-to-workspace a";
           }
           {
-            "if".app-id = "com.tinyspeck.slackmacgap";
-            run = "move-node-to-workspace s";
-          }
-          {
             "if".app-id = "com.hnc.Discord";
             run = "move-node-to-workspace d";
           }

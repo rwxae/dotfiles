@@ -128,10 +128,6 @@
             workspace = "name:a";
           }
           {
-            match.class = "slack";
-            workspace = "name:s";
-          }
-          {
             match.class = "discord";
             workspace = "name:d";
           }
@@ -212,7 +208,6 @@
             function()
               hl.exec_cmd("uwsm app -- thunderbird") 
               hl.exec_cmd("uwsm app -- anytype") 
-              hl.exec_cmd("uwsm app -- slack") 
               hl.exec_cmd("uwsm app -- discord") 
               hl.exec_cmd("uwsm app -- zen-beta") 
               hl.exec_cmd("uwsm app -- kitty") 
