@@ -20,20 +20,8 @@
       { id = "okkmnbabeggdmakmnffkoflpdlkmmpcp"; }
       # Wappalyzer - Technology profiler
       { id = "gppongmhjkpfnbhagpmjfkannfbllamg"; }
-      # Gopass Bridge
-      { id = "kkhfnlkhiapbiehimabddjbimfaijdhk"; }
-      # AI Grammar Checker & Paraphraser – LanguageTool
-      { id = "oldceeleldhonbafppcapldpdifcinji"; }
       # Simple Translate
       { id = "ibplnjkanclpjokhdolnendpplpjiace"; }
-      # unsight
-      { id = "dnkemphgofcdnnfjblcpclofbkeimpnc"; }
-      # Decentraleyes
-      { id = "ldpochfccmkkmhdbclfhpagapcfdljkj"; }
-      # Privacy Badger
-      { id = "pkehgijcmpdhfbdbbnkijodmdjhbjlgp"; }
-      # Audio Compressor
-      { id = "daomidlfpcfjchpalpjogmnhabkekbnn"; }
     ];
   };
 }
