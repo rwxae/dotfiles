@@ -28,7 +28,7 @@
   stylix.cursor = {
     package = pkgs.rose-pine-hyprcursor;
     name = "rose-pine-hyprcursor";
-    size = 32;
+    size = 26;
   };
 
   security.polkit.enable = true;
