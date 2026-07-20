@@ -3,7 +3,7 @@
 {
   stylix = {
     enable = true;
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/purpledream.yaml";
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/evenok-dark.yaml";
     fonts = with pkgs; {
       serif = {
         package = source-serif;
