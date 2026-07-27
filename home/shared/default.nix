@@ -19,6 +19,7 @@
     ./kitty.nix
     ./lazydocker.nix
     ./mergiraf.nix
+    ./nix-index-database.nix
     ./nix-search-tv.nix
     ./oh-my-posh.nix
     ./packages.nix
