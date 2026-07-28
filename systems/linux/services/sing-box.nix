@@ -31,19 +31,19 @@
           type = "hysteria2";
           tag = "proxy";
           server = {
-            _secret = "/run/secrets/hysteria/server";
+            _secret = "/etc/secrets/hysteria/server";
           };
           server_port = {
-            _secret = "/run/secrets/hysteria/server_port";
+            _secret = "/etc/secrets/hysteria/server_port";
             quote = false;
           };
           password = {
-            _secret = "/run/secrets/hysteria/auth";
+            _secret = "/etc/secrets/hysteria/auth";
           };
           tls = {
             enabled = true;
             server_name = {
-              _secret = "/run/secrets/hysteria/server_name";
+              _secret = "/etc/secrets/hysteria/server_name";
             };
           };
         }
