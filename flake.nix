@@ -26,23 +26,16 @@
       ...
     }:
     {
-      nixosConfigurations =
-        let
-          nixosModules = [
+      nixosConfigurations = {
+        beast = nixpkgs.lib.nixosSystem {
+          specialArgs = { inherit inputs; };
+          modules = [
             home-manager.nixosModules.home-manager
             stylix.nixosModules.stylix
+            ./hosts/beast/configuration.nix
           ];
-        in
-        {
-          nixos = nixpkgs.lib.nixosSystem {
-            specialArgs = { inherit inputs; };
-            modules = [ ./hosts/nixos/configuration.nix ] ++ nixosModules;
-          };
-          beast = nixpkgs.lib.nixosSystem {
-            specialArgs = { inherit inputs; };
-            modules = [ ./hosts/beast/configuration.nix ] ++ nixosModules;
-          };
         };
+      };
 
       darwinConfigurations = {
         mac = nix-darwin.lib.darwinSystem {
