@@ -21,7 +21,6 @@
     ./mergiraf.nix
     ./nix-index-database.nix
     ./nix-search-tv.nix
-    ./oh-my-posh.nix
     ./packages.nix
     ./ripgrep.nix
     ./television.nix
