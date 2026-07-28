@@ -10,8 +10,6 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     nix-index-database.url = "github:nix-community/nix-index-database";
     nix-index-database.inputs.nixpkgs.follows = "nixpkgs";
-    zsh-helix-mode.url = "github:multirious/zsh-helix-mode/main";
-    zsh-helix-mode.inputs.nixpkgs.follows = "nixpkgs";
     stylix.url = "github:nix-community/stylix";
     stylix.inputs.nixpkgs.follows = "nixpkgs";
     noctalia.url = "github:noctalia-dev/noctalia";
