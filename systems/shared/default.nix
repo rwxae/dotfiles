@@ -29,4 +29,7 @@
   home-manager.extraSpecialArgs = { inherit inputs; };
 
   time.timeZone = "Europe/Moscow";
+
+  # Enables vendor completions provided by Nixpkgs
+  programs.zsh.enable = true;
 }

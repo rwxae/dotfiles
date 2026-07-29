@@ -6,6 +6,5 @@
     ./hyprland.nix
     ./ssh.nix
     ./steam.nix
-    ./zsh.nix
   ];
 }
