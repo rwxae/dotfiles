@@ -20,9 +20,7 @@
   outputs =
     inputs@{
       nixpkgs,
-      home-manager,
       nix-darwin,
-      stylix,
       ...
     }:
     {
@@ -30,8 +28,6 @@
         beast = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs; };
           modules = [
-            home-manager.nixosModules.home-manager
-            stylix.nixosModules.stylix
             ./hosts/beast/configuration.nix
           ];
         };
@@ -41,8 +37,6 @@
         mac = nix-darwin.lib.darwinSystem {
           specialArgs = { inherit inputs; };
           modules = [
-            home-manager.darwinModules.home-manager
-            stylix.darwinModules.stylix
             ./hosts/mac/configuration.nix
           ];
         };
