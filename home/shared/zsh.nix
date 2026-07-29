@@ -29,4 +29,8 @@
       bindkey -M emacs '^N' history-substring-search-down
     '';
   };
+
+  programs.starship = {
+    enable = true;
+  };
 }
