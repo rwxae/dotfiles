@@ -21,10 +21,6 @@
     };
   };
 
-  environment = {
-    pathsToLink = [ "/share/zsh" ];
-  };
-
   stylix.cursor = {
     package = pkgs.rose-pine-hyprcursor;
     name = "rose-pine-hyprcursor";
