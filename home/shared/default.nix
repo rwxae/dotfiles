@@ -2,7 +2,6 @@
 
 {
   imports = [
-    ./aichat.nix
     ./asciinema.nix
     ./bat.nix
     ./btop.nix
