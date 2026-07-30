@@ -11,6 +11,8 @@
 
   system.stateVersion = "25.05";
 
+  users.defaultUserShell = pkgs.zsh;
+
   networking = {
     networkmanager.enable = true;
     firewall.checkReversePath = "loose";
