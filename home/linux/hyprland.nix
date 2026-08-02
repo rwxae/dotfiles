@@ -12,7 +12,6 @@
     systemd.enable = false;
     package = null;
     portalPackage = null;
-    plugins = with pkgs.hyprlandPlugins; [ csgo-vulkan-fix ];
     settings =
       let
         mkLuaInline = lib.generators.mkLuaInline;
@@ -76,12 +75,6 @@
 
           misc = {
             focus_on_activate = true;
-          };
-
-          plugin = {
-            csgo_vulkan_fix = {
-              fix_mouse = true;
-            };
           };
         };
 
@@ -222,9 +215,6 @@
             end'')
         ];
       };
-    extraConfig = ''
-      hl.plugin.csgo_vulkan_fix.vkfix_app({ app = "cs2", w = 1440, h = 1080 })
-    '';
   };
 
   services.hypridle = {
