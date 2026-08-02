@@ -226,8 +226,6 @@
     };
   };
 
-  home.pointerCursor = {
-    enable = true; # TODO: https://github.com/nix-community/stylix/pull/2407
-    hyprcursor.enable = true; # TODO: https://github.com/nix-community/stylix/issues/478
-  };
+  # TODO: https://github.com/nix-community/stylix/issues/478
+  home.pointerCursor.hyprcursor.enable = true;
 }
