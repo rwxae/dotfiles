@@ -60,10 +60,6 @@
             allow_tearing = true;
           };
 
-          scrolling = {
-            column_width = 0.9;
-          };
-
           input = {
             kb_layout = "us,ru";
             kb_options = "grp:caps_toggle";
