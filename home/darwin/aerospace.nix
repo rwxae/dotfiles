@@ -60,10 +60,6 @@
             run = "move-node-to-workspace a";
           }
           {
-            "if".app-id = "com.hnc.Discord";
-            run = "move-node-to-workspace d";
-          }
-          {
             "if".app-id = "app.zen-browser.zen";
             run = "move-node-to-workspace f";
           }

@@ -7,7 +7,6 @@
     iina
     keka
     keycastr
-    discord
 
     colima
     docker
