@@ -20,6 +20,5 @@
 
     # TODO: Should be in the /shared/packages (broken on darwin)
     anytype
-    exodus
   ];
 }
