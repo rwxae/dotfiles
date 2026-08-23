@@ -13,6 +13,7 @@
           "Ctrl b"
           "Ctrl n"
           "Ctrl p"
+          "Ctrl q"
         ];
       };
       session_serialization = false;
