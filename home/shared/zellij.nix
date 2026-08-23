@@ -7,6 +7,7 @@
     attachExistingSession = true;
     exitShellOnExit = true;
     settings = {
+      default_layout = "main";
       keybinds = {
         unbind._args = [
           "Alt f"
@@ -34,5 +35,38 @@
     plugins = with pkgs.zellijPlugins; [
       autolock
     ];
+    layouts = {
+      main.layout._children = [
+        {
+          default_tab_template._children = [
+            {
+              pane = {
+                _props = {
+                  size = 1;
+                  borderless = true;
+                };
+                plugin._props.location = "tab-bar";
+              };
+            }
+            { children = { }; }
+            {
+              pane = {
+                _props = {
+                  size = 1;
+                  borderless = true;
+                };
+                plugin._props.location = "status-bar";
+              };
+            }
+          ];
+        }
+        { tab = { }; }
+        { tab = { }; }
+        { tab = { }; }
+        { tab = { }; }
+        { tab = { }; }
+        { tab = { }; }
+      ];
+    };
   };
 }
