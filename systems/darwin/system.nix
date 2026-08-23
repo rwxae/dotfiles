@@ -78,6 +78,13 @@
     keyboard = {
       enableKeyMapping = true;
       remapCapsLockToEscape = true;
+      userKeyMapping = [
+        # Remap Right Command to Control
+        {
+          HIDKeyboardModifierMappingSrc = 30064771303;
+          HIDKeyboardModifierMappingDst = 30064771296;
+        }
+      ];
     };
   };
 }
