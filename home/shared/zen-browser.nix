@@ -7,6 +7,7 @@
 
   programs.zen-browser = {
     enable = true;
+    setAsDefaultBrowser = true;
     policies = {
       AutofillAddressEnabled = false;
       AutofillCreditCardEnabled = false;
