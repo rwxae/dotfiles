@@ -18,7 +18,18 @@
       DisableTelemetry = true;
       OfferToSaveLogins = false;
     };
-    profiles.wardxela = { };
+    profiles = {
+      default = {
+        id = 0;
+      };
+      chill = {
+        id = 1;
+      };
+    };
   };
-  stylix.targets.zen-browser.profileNames = [ "wardxela" ];
+
+  stylix.targets.zen-browser.profileNames = [
+    "default"
+    "chill"
+  ];
 }
