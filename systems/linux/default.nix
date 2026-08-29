@@ -26,9 +26,9 @@
   };
 
   stylix.cursor = {
-    package = pkgs.rose-pine-hyprcursor;
-    name = "rose-pine-hyprcursor";
-    size = 26;
+    package = pkgs.apple-cursor;
+    name = "macOS";
+    size = 24;
   };
 
   security.polkit.enable = true;
