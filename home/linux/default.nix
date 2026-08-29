@@ -6,6 +6,7 @@
     ./chromium.nix
     ./hyprland.nix
     ./mpv.nix
+    ./mpvpaper.nix
     ./noctalia.nix
     ./obs.nix
     ./options.nix
