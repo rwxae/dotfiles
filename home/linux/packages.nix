@@ -9,7 +9,6 @@
     vial
     nemo
     krita
-    nicotine-plus
     (discord.override { withVencord = true; })
     r2modman
 
