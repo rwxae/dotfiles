@@ -13,7 +13,6 @@
     r2modman
 
     # CLI
-    android-tools
     playerctl
     wl-clipboard
 
