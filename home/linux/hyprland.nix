@@ -14,6 +14,8 @@
     portalPackage = null;
     settings =
       let
+        cfg = config.wayland.windowManager.hyprland.settings;
+        primaryMonitor = (builtins.head cfg.monitor).output;
         mkLuaInline = lib.generators.mkLuaInline;
         toLua = lib.generators.toLua;
         mkArgs = args: { _args = args; };
@@ -74,23 +76,6 @@
           };
         };
 
-        monitor = [
-          {
-            output = config.mySystem.monitors.primary;
-            mode = "1920x1080@144";
-            position = "0x0";
-            scale = 1;
-          }
-          {
-            output = config.mySystem.monitors.secondary;
-            mode = "1920x1080@60";
-            position = "1920x0";
-            scale = 1;
-            transform = 3;
-            disabled = true;
-          }
-        ];
-
         layer_rule = [
           {
             match.namespace = "vicinae";
@@ -144,7 +129,7 @@
 
         workspace_rule = map (workspace: {
           workspace = "name:${workspace}";
-          monitor = config.mySystem.monitors.primary;
+          monitor = primaryMonitor;
         }) workspaces;
 
         bind = lib.flatten [
@@ -187,8 +172,6 @@
             ${lib.getExe pkgs.tesseract} - stdout |
             ${lib.getExe' pkgs.wl-clipboard "wl-copy"}
           '') { })
-
-          (bind "${mod} + CONTROL + m" (dsp.dpms config.mySystem.monitors.secondary) { })
 
           (map (w: bind "${mod} + ${w}" (dsp.focus { workspace = "name:${w}"; }) { }) workspaces)
           (map (

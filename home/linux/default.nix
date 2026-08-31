@@ -9,7 +9,6 @@
     ./mpvpaper.nix
     ./noctalia.nix
     ./obs.nix
-    ./options.nix
     ./packages.nix
     ./vicinae.nix
     ./xdg.nix
