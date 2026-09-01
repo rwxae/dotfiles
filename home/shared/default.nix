@@ -26,6 +26,7 @@
     ./thunderbird.nix
     ./yazi.nix
     ./yt-dlp.nix
+    ./zathura.nix
     ./zed-editor.nix
     ./zellij.nix
     ./zen-browser.nix
