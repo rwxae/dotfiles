@@ -21,6 +21,7 @@
     ./nix-index-database.nix
     ./nix-search-tv.nix
     ./packages.nix
+    ./pi.nix
     ./ripgrep.nix
     ./television.nix
     ./thunderbird.nix
