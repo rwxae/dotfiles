@@ -69,15 +69,6 @@ in
       main.layout._children = [
         {
           default_tab_template._children = [
-            {
-              pane = {
-                _props = {
-                  size = 1;
-                  borderless = true;
-                };
-                plugin._props.location = "tab-bar";
-              };
-            }
             { children = { }; }
             {
               pane = {
