@@ -49,7 +49,6 @@ in
                         {
                           floating = true;
                           ignore_case = true;
-                          quick_jump = true;
                         }
                       ];
                     };
