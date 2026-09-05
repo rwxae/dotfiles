@@ -84,42 +84,49 @@ in
         {
           tab = {
             _props = {
-              name = "Root";
+              name = "Project";
             };
           };
         }
         {
           tab = {
             _props = {
-              name = "Edit";
+              name = "Editor";
             };
           };
         }
         {
           tab = {
             _props = {
-              name = "Chat";
+              name = "AI Agent";
             };
           };
         }
         {
           tab = {
             _props = {
-              name = "sh#1";
+              name = "Remote Server";
             };
           };
         }
         {
           tab = {
             _props = {
-              name = "sh#2";
+              name = "1st Shell";
             };
           };
         }
         {
           tab = {
             _props = {
-              name = "sh#3";
+              name = "2nd Shell";
+            };
+          };
+        }
+        {
+          tab = {
+            _props = {
+              name = "3rd Shell";
             };
           };
         }
