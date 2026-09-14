@@ -5,7 +5,6 @@
     # GUI
     monitorcontrol
     iina
-    keka
     keycastr
 
     colima
