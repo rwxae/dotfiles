@@ -4,7 +4,6 @@
   home.packages = with pkgs; [
     # GUI
     qbittorrent
-    hoppscotch
     feishin
 
     # CLI
