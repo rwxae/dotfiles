@@ -24,11 +24,6 @@
     };
   };
 
-  services.hardware.openrgb = {
-    enable = true;
-    startupProfile = "off";
-  };
-
   environment.systemPackages = with pkgs; [
     headsetcontrol
   ];
