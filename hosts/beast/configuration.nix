@@ -33,6 +33,17 @@
 
   networking.hostName = "beast";
 
+  programs.gamescope.args = [
+    "--prefer-output"
+    "DP-4"
+    "--output-width"
+    "2560"
+    "--output-height"
+    "1440"
+    "--nested-refresh"
+    "180"
+  ];
+
   home-manager.users.rwxae = ./home.nix;
 
   users.users.rwxae = {
