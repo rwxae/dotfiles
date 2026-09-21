@@ -19,7 +19,7 @@
     {
       output = "DP-5";
       mode = "1920x1080@144";
-      position = "0x180";
+      position = "0x36";
       scale = 1;
     }
   ];
