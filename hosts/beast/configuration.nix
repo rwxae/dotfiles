@@ -31,6 +31,8 @@
 
   services.xserver.videoDrivers = [ "nvidia" ];
 
+  services.displayManager.noctalia-greeter.passwordlessSyncUsers = [ "rwxae" ];
+
   networking.hostName = "beast";
 
   programs.gamescope.args = [
