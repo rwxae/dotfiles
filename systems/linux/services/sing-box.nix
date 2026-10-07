@@ -11,8 +11,8 @@
           {
             type = "https";
             tag = "dns-global";
-            server = "8.8.8.8";
-            tls.server_name = "dns.google";
+            server = "1.1.1.1";
+            tls.server_name = "one.one.one.one";
           }
         ];
       };
