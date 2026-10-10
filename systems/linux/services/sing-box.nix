@@ -52,6 +52,7 @@
           tag = "direct";
         }
       ];
+      http_clients = [ { tag = "http-client"; } ];
       route = {
         auto_detect_interface = true;
         rule_set = [
