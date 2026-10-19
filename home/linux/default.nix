@@ -12,5 +12,6 @@
     ./packages.nix
     ./vicinae.nix
     ./xdg.nix
+    ./zathura.nix
   ];
 }
