@@ -8,7 +8,6 @@
     heroic
     vial
     nemo
-    (discord.override { withVencord = true; })
     r2modman
 
     # CLI
