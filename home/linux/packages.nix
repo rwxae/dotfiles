@@ -8,7 +8,6 @@
     heroic
     vial
     nemo
-    krita
     (discord.override { withVencord = true; })
     r2modman
 
