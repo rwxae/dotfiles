@@ -7,10 +7,12 @@
     settings =
       let
         mod = "alt-cmd-ctrl";
-        workspaces = lib.stringToCharacters "123456789abcdefgimnopqrstuvwxyz";
+        workspaces = lib.stringToCharacters "abcdefgimnopqrstuvwxyz";
       in
       {
+        config-version = 2;
         automatically-unhide-macos-hidden-apps = true;
+        default-root-container-layout = "accordion";
         mode.main.binding = {
           "${mod}-slash" = "layout tiles horizontal vertical";
           "${mod}-comma" = "layout accordion horizontal vertical";
@@ -48,23 +50,23 @@
         );
         on-window-detected = [
           {
-            "if".app-id = "dev.zed.Zed";
+            "if" = "test %{app-bundle-id} = dev.zed.Zed";
             run = "move-node-to-workspace e";
           }
           {
-            "if".app-id = "org.nixos.thunderbird";
+            "if" = "test %{app-bundle-id} = org.nixos.thunderbird";
             run = "move-node-to-workspace r";
           }
           {
-            "if".app-id = "com.anytype.anytype";
+            "if" = "test %{app-bundle-id} = com.anytype.anytype";
             run = "move-node-to-workspace a";
           }
           {
-            "if".app-id = "app.zen-browser.zen";
+            "if" = "test %{app-bundle-id} = app.zen-browser.zen";
             run = "move-node-to-workspace f";
           }
           {
-            "if".app-id = "net.kovidgoyal.kitty";
+            "if" = "test %{app-bundle-id} = net.kovidgoyal.kitty";
             run = "move-node-to-workspace g";
           }
         ];
