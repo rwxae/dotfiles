@@ -18,6 +18,7 @@
       enable32Bit = true;
     };
     nvidia.open = true;
+    nvidia-container-toolkit.enable = true;
     bluetooth = {
       enable = true;
       powerOnBoot = true;
