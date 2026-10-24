@@ -129,6 +129,10 @@
             match.class = "chromium-browser";
             workspace = "name:c";
           }
+          {
+            match.class = "feishin";
+            workspace = "name:m";
+          }
         ];
 
         workspace_rule = map (workspace: {
