@@ -2,7 +2,6 @@
 
 {
   imports = [
-    ./asciinema.nix
     ./bat.nix
     ./btop.nix
     ./delta.nix

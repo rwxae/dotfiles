@@ -1,7 +1,0 @@
-{ ... }:
-
-{
-  programs.asciinema = {
-    enable = true;
-  };
-}
