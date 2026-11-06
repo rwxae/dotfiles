@@ -69,6 +69,10 @@
             "if" = "test %{app-bundle-id} = net.kovidgoyal.kitty";
             run = "move-node-to-workspace g";
           }
+          {
+            "if" = "test %{app-bundle-id} = org.jeffvli.feishin";
+            run = "move-node-to-workspace m";
+          }
         ];
       };
   };
