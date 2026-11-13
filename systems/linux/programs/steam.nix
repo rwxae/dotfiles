@@ -1,11 +1,9 @@
-{ inputs, pkgs, ... }:
+{ pkgs, ... }:
 
 {
-  nixpkgs.overlays = [ inputs.millennium.overlays.default ];
-
   programs.steam = {
     enable = true;
-    package = pkgs.millennium-steam;
+    package = pkgs.steamWithMillennium;
     protontricks.enable = true;
   };
 }
