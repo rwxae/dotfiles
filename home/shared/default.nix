@@ -18,6 +18,7 @@
     ./kitty.nix
     ./lazydocker.nix
     ./mergiraf.nix
+    ./mpv.nix
     ./nix-index-database.nix
     ./nix-search-tv.nix
     ./packages.nix
