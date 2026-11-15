@@ -23,6 +23,7 @@
     git-open
     spek
     pi-coding-agent
+    hurl
 
     # Archiving and compression
     zip
